@@ -1,0 +1,1734 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "name": "Kabyle Dictionary",
+    "description": "Dictionnaire Kabyle complet avec traductions en Français, Arabe et Anglais",
+    "alphabets": ["latin", "tifinagh"]
+  },
+  "categories": [
+    {
+      "id": "greetings",
+      "name": {
+        "kab_latin": "Azul",
+        "kab_tifinagh": "ⴰⵣⵓⵍ",
+        "fr": "Salutations",
+        "ar": "تحيات",
+        "en": "Greetings"
+      },
+      "icon": "👋",
+      "entries": [
+        {
+          "id": "gr_001",
+          "kab_latin": "Azul",
+          "kab_tifinagh": "ⴰⵣⵓⵍ",
+          "fr": "Bonjour / Salut",
+          "ar": "مرحبا",
+          "en": "Hello",
+          "phonetic": "a-zoul",
+          "usage": "Salutation courante"
+        },
+        {
+          "id": "gr_002",
+          "kab_latin": "Azul fellawen",
+          "kab_tifinagh": "ⴰⵣⵓⵍ ⴼⵍⵍⴰⵡⵏ",
+          "fr": "Bonjour à vous (pluriel)",
+          "ar": "مرحبا بكم",
+          "en": "Hello to you all",
+          "phonetic": "a-zoul fel-la-wen",
+          "usage": "Salutation formelle pluriel"
+        },
+        {
+          "id": "gr_003",
+          "kab_latin": "Azul fellak",
+          "kab_tifinagh": "ⴰⵣⵓⵍ ⴼⵍⵍⴰⴽ",
+          "fr": "Bonjour à toi (masculin)",
+          "ar": "مرحبا بك",
+          "en": "Hello to you (male)",
+          "phonetic": "a-zoul fel-lak",
+          "usage": "Salutation à un homme"
+        },
+        {
+          "id": "gr_004",
+          "kab_latin": "Azul fellakem",
+          "kab_tifinagh": "ⴰⵣⵓⵍ ⴼⵍⵍⴰⴽⵎ",
+          "fr": "Bonjour à toi (féminin)",
+          "ar": "مرحبا بك",
+          "en": "Hello to you (female)",
+          "phonetic": "a-zoul fel-la-kem",
+          "usage": "Salutation à une femme"
+        },
+        {
+          "id": "gr_005",
+          "kab_latin": "Tanamiṛt",
+          "kab_tifinagh": "ⵜⴰⵏⴰⵎⵉⵕⵜ",
+          "fr": "Merci",
+          "ar": "شكرا",
+          "en": "Thank you",
+          "phonetic": "ta-na-mirt",
+          "usage": "Remerciement"
+        },
+        {
+          "id": "gr_006",
+          "kab_latin": "Ar tufat",
+          "kab_tifinagh": "ⴰⵔ ⵜⵓⴼⴰⵜ",
+          "fr": "À demain",
+          "ar": "إلى الغد",
+          "en": "See you tomorrow",
+          "phonetic": "ar tou-fat",
+          "usage": "Au revoir pour demain"
+        },
+        {
+          "id": "gr_007",
+          "kab_latin": "Ar ticki",
+          "kab_tifinagh": "ⴰⵔ ⵜⵉⵛⴽⵉ",
+          "fr": "À bientôt",
+          "ar": "إلى اللقاء",
+          "en": "See you soon",
+          "phonetic": "ar ti-ki",
+          "usage": "Au revoir temporaire"
+        },
+        {
+          "id": "gr_008",
+          "kab_latin": "Amek tellid?",
+          "kab_tifinagh": "ⴰⵎⴽ ⵜⵍⵍⵉⴷ?",
+          "fr": "Comment vas-tu?",
+          "ar": "كيف حالك؟",
+          "en": "How are you?",
+          "phonetic": "a-mek tel-lid",
+          "usage": "Question sur l'état"
+        },
+        {
+          "id": "gr_009",
+          "kab_latin": "Lḥamdullah, labas",
+          "kab_tifinagh": "ⵍⵃⵎⴷⵓⵍⵍⴰⵀ, ⵍⴰⴱⴰⵙ",
+          "fr": "Bien, merci à Dieu",
+          "ar": "الحمد لله، بخير",
+          "en": "Fine, thanks to God",
+          "phonetic": "l-ham-dou-llah, la-bas",
+          "usage": "Réponse positive"
+        },
+        {
+          "id": "gr_010",
+          "kab_latin": "Sbah lxir",
+          "kab_tifinagh": "ⵙⴱⴰⵀ ⵍⵅⵉⵔ",
+          "fr": "Bonjour (matin)",
+          "ar": "صباح الخير",
+          "en": "Good morning",
+          "phonetic": "sbah l-khir",
+          "usage": "Salutation du matin"
+        },
+        {
+          "id": "gr_011",
+          "kab_latin": "Msa lxir",
+          "kab_tifinagh": "ⵎⵙⴰ ⵍⵅⵉⵔ",
+          "fr": "Bonsoir",
+          "ar": "مساء الخير",
+          "en": "Good evening",
+          "phonetic": "msa l-khir",
+          "usage": "Salutation du soir"
+        },
+        {
+          "id": "gr_012",
+          "kab_latin": "Semḥiyi",
+          "kab_tifinagh": "ⵙⵎⵃⵉⵢⵉ",
+          "fr": "Excuse-moi / Pardon",
+          "ar": "سامحني",
+          "en": "Excuse me / Sorry",
+          "phonetic": "sem-hi-yi",
+          "usage": "Demande de pardon"
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "name": {
+        "kab_latin": "Twacult",
+        "kab_tifinagh": "ⵜⵡⴰⵛⵓⵍⵜ",
+        "fr": "Famille",
+        "ar": "عائلة",
+        "en": "Family"
+      },
+      "icon": "👨‍👩‍👧‍👦",
+      "entries": [
+        {
+          "id": "fam_001",
+          "kab_latin": "Baba",
+          "kab_tifinagh": "ⴱⴰⴱⴰ",
+          "fr": "Père / Papa",
+          "ar": "أب / بابا",
+          "en": "Father / Dad",
+          "phonetic": "ba-ba",
+          "usage": "Père"
+        },
+        {
+          "id": "fam_002",
+          "kab_latin": "Yemma",
+          "kab_tifinagh": "ⵢⵎⵎⴰ",
+          "fr": "Mère / Maman",
+          "ar": "أم / ماما",
+          "en": "Mother / Mom",
+          "phonetic": "yem-ma",
+          "usage": "Mère"
+        },
+        {
+          "id": "fam_003",
+          "kab_latin": "Gma",
+          "kab_tifinagh": "ⴳⵎⴰ",
+          "fr": "Frère",
+          "ar": "أخ",
+          "en": "Brother",
+          "phonetic": "gma",
+          "usage": "Frère"
+        },
+        {
+          "id": "fam_004",
+          "kab_latin": "Ultma",
+          "kab_tifinagh": "ⵓⵍⵜⵎⴰ",
+          "fr": "Sœur",
+          "ar": "أخت",
+          "en": "Sister",
+          "phonetic": "oult-ma",
+          "usage": "Sœur"
+        },
+        {
+          "id": "fam_005",
+          "kab_latin": "Jeddi",
+          "kab_tifinagh": "ⵊⴷⴷⵉ",
+          "fr": "Grand-père",
+          "ar": "جد",
+          "en": "Grandfather",
+          "phonetic": "jed-di",
+          "usage": "Grand-père"
+        },
+        {
+          "id": "fam_006",
+          "kab_latin": "Setti",
+          "kab_tifinagh": "ⵙⵜⵜⵉ",
+          "fr": "Grand-mère",
+          "ar": "جدة",
+          "en": "Grandmother",
+          "phonetic": "set-ti",
+          "usage": "Grand-mère"
+        },
+        {
+          "id": "fam_007",
+          "kab_latin": "Mmi",
+          "kab_tifinagh": "ⵎⵎⵉ",
+          "fr": "Fils",
+          "ar": "ابن",
+          "en": "Son",
+          "phonetic": "mmi",
+          "usage": "Fils"
+        },
+        {
+          "id": "fam_008",
+          "kab_latin": "Yelli",
+          "kab_tifinagh": "ⵢⵍⵍⵉ",
+          "fr": "Fille (enfant)",
+          "ar": "بنت",
+          "en": "Daughter",
+          "phonetic": "yel-li",
+          "usage": "Fille"
+        },
+        {
+          "id": "fam_009",
+          "kab_latin": "Aâmmi",
+          "kab_tifinagh": "ⴰⵄⵎⵎⵉ",
+          "fr": "Oncle paternel",
+          "ar": "عم",
+          "en": "Paternal uncle",
+          "phonetic": "a-âm-mi",
+          "usage": "Oncle côté père"
+        },
+        {
+          "id": "fam_010",
+          "kab_latin": "Xali",
+          "kab_tifinagh": "ⵅⴰⵍⵉ",
+          "fr": "Oncle maternel",
+          "ar": "خال",
+          "en": "Maternal uncle",
+          "phonetic": "kha-li",
+          "usage": "Oncle côté mère"
+        },
+        {
+          "id": "fam_011",
+          "kab_latin": "Âemti",
+          "kab_tifinagh": "ⵄⵎⵜⵉ",
+          "fr": "Tante paternelle",
+          "ar": "عمة",
+          "en": "Paternal aunt",
+          "phonetic": "âem-ti",
+          "usage": "Tante côté père"
+        },
+        {
+          "id": "fam_012",
+          "kab_latin": "Xalti",
+          "kab_tifinagh": "ⵅⴰⵍⵜⵉ",
+          "fr": "Tante maternelle",
+          "ar": "خالة",
+          "en": "Maternal aunt",
+          "phonetic": "khal-ti",
+          "usage": "Tante côté mère"
+        },
+        {
+          "id": "fam_013",
+          "kab_latin": "Argaz",
+          "kab_tifinagh": "ⴰⵔⴳⴰⵣ",
+          "fr": "Mari / Homme",
+          "ar": "زوج / رجل",
+          "en": "Husband / Man",
+          "phonetic": "ar-gaz",
+          "usage": "Époux ou homme"
+        },
+        {
+          "id": "fam_014",
+          "kab_latin": "Tameṭṭut",
+          "kab_tifinagh": "ⵜⴰⵎⵟⵟⵓⵜ",
+          "fr": "Femme / Épouse",
+          "ar": "زوجة / امرأة",
+          "en": "Wife / Woman",
+          "phonetic": "ta-met-tout",
+          "usage": "Épouse ou femme"
+        },
+        {
+          "id": "fam_015",
+          "kab_latin": "Aqcic",
+          "kab_tifinagh": "ⴰⵇⵛⵉⵛ",
+          "fr": "Garçon / Enfant",
+          "ar": "ولد / طفل",
+          "en": "Boy / Child",
+          "phonetic": "aq-chich",
+          "usage": "Garçon"
+        },
+        {
+          "id": "fam_016",
+          "kab_latin": "Taqcict",
+          "kab_tifinagh": "ⵜⴰⵇⵛⵉⵛⵜ",
+          "fr": "Fille / Petite fille",
+          "ar": "بنت صغيرة",
+          "en": "Girl",
+          "phonetic": "taq-chicht",
+          "usage": "Fille"
+        }
+      ]
+    },
+    {
+      "id": "numbers",
+      "name": {
+        "kab_latin": "Uṭṭunen",
+        "kab_tifinagh": "ⵓⵟⵟⵓⵏⵏ",
+        "fr": "Nombres",
+        "ar": "أرقام",
+        "en": "Numbers"
+      },
+      "icon": "🔢",
+      "entries": [
+        {
+          "id": "num_001",
+          "kab_latin": "Yiwen",
+          "kab_tifinagh": "ⵢⵉⵡⵏ",
+          "fr": "Un (1)",
+          "ar": "واحد",
+          "en": "One",
+          "phonetic": "yi-wen",
+          "usage": "Nombre 1"
+        },
+        {
+          "id": "num_002",
+          "kab_latin": "Sin",
+          "kab_tifinagh": "ⵙⵉⵏ",
+          "fr": "Deux (2)",
+          "ar": "اثنان",
+          "en": "Two",
+          "phonetic": "sin",
+          "usage": "Nombre 2"
+        },
+        {
+          "id": "num_003",
+          "kab_latin": "Tlata",
+          "kab_tifinagh": "ⵜⵍⴰⵜⴰ",
+          "fr": "Trois (3)",
+          "ar": "ثلاثة",
+          "en": "Three",
+          "phonetic": "tla-ta",
+          "usage": "Nombre 3"
+        },
+        {
+          "id": "num_004",
+          "kab_latin": "Rebɛa",
+          "kab_tifinagh": "ⵔⴱⵄⴰ",
+          "fr": "Quatre (4)",
+          "ar": "أربعة",
+          "en": "Four",
+          "phonetic": "reb-âa",
+          "usage": "Nombre 4"
+        },
+        {
+          "id": "num_005",
+          "kab_latin": "Xemsa",
+          "kab_tifinagh": "ⵅⵎⵙⴰ",
+          "fr": "Cinq (5)",
+          "ar": "خمسة",
+          "en": "Five",
+          "phonetic": "khem-sa",
+          "usage": "Nombre 5"
+        },
+        {
+          "id": "num_006",
+          "kab_latin": "Setta",
+          "kab_tifinagh": "ⵙⵜⵜⴰ",
+          "fr": "Six (6)",
+          "ar": "ستة",
+          "en": "Six",
+          "phonetic": "set-ta",
+          "usage": "Nombre 6"
+        },
+        {
+          "id": "num_007",
+          "kab_latin": "Sebɛa",
+          "kab_tifinagh": "ⵙⴱⵄⴰ",
+          "fr": "Sept (7)",
+          "ar": "سبعة",
+          "en": "Seven",
+          "phonetic": "seb-âa",
+          "usage": "Nombre 7"
+        },
+        {
+          "id": "num_008",
+          "kab_latin": "Tmanya",
+          "kab_tifinagh": "ⵜⵎⴰⵏⵢⴰ",
+          "fr": "Huit (8)",
+          "ar": "ثمانية",
+          "en": "Eight",
+          "phonetic": "tma-nya",
+          "usage": "Nombre 8"
+        },
+        {
+          "id": "num_009",
+          "kab_latin": "Tesɛa",
+          "kab_tifinagh": "ⵜⵙⵄⴰ",
+          "fr": "Neuf (9)",
+          "ar": "تسعة",
+          "en": "Nine",
+          "phonetic": "tes-âa",
+          "usage": "Nombre 9"
+        },
+        {
+          "id": "num_010",
+          "kab_latin": "Ɛecra",
+          "kab_tifinagh": "ⵄⵛⵔⴰ",
+          "fr": "Dix (10)",
+          "ar": "عشرة",
+          "en": "Ten",
+          "phonetic": "âech-ra",
+          "usage": "Nombre 10"
+        },
+        {
+          "id": "num_011",
+          "kab_latin": "Ɛecrin",
+          "kab_tifinagh": "ⵄⵛⵔⵉⵏ",
+          "fr": "Vingt (20)",
+          "ar": "عشرون",
+          "en": "Twenty",
+          "phonetic": "âech-rin",
+          "usage": "Nombre 20"
+        },
+        {
+          "id": "num_012",
+          "kab_latin": "Mya",
+          "kab_tifinagh": "ⵎⵢⴰ",
+          "fr": "Cent (100)",
+          "ar": "مائة",
+          "en": "Hundred",
+          "phonetic": "mya",
+          "usage": "Nombre 100"
+        },
+        {
+          "id": "num_013",
+          "kab_latin": "Alf",
+          "kab_tifinagh": "ⴰⵍⴼ",
+          "fr": "Mille (1000)",
+          "ar": "ألف",
+          "en": "Thousand",
+          "phonetic": "alf",
+          "usage": "Nombre 1000"
+        }
+      ]
+    },
+    {
+      "id": "nature",
+      "name": {
+        "kab_latin": "Tagara",
+        "kab_tifinagh": "ⵜⴰⴳⴰⵔⴰ",
+        "fr": "Nature",
+        "ar": "طبيعة",
+        "en": "Nature"
+      },
+      "icon": "🌿",
+      "entries": [
+        {
+          "id": "nat_001",
+          "kab_latin": "Adrar",
+          "kab_tifinagh": "ⴰⴷⵔⴰⵔ",
+          "fr": "Montagne",
+          "ar": "جبل",
+          "en": "Mountain",
+          "phonetic": "ad-rar",
+          "usage": "Montagne"
+        },
+        {
+          "id": "nat_002",
+          "kab_latin": "Asif",
+          "kab_tifinagh": "ⴰⵙⵉⴼ",
+          "fr": "Rivière",
+          "ar": "نهر",
+          "en": "River",
+          "phonetic": "a-sif",
+          "usage": "Cours d'eau"
+        },
+        {
+          "id": "nat_003",
+          "kab_latin": "Tala",
+          "kab_tifinagh": "ⵜⴰⵍⴰ",
+          "fr": "Fontaine / Source",
+          "ar": "عين / نبع",
+          "en": "Fountain / Spring",
+          "phonetic": "ta-la",
+          "usage": "Source d'eau"
+        },
+        {
+          "id": "nat_004",
+          "kab_latin": "Tafukt",
+          "kab_tifinagh": "ⵜⴰⴼⵓⴽⵜ",
+          "fr": "Soleil",
+          "ar": "شمس",
+          "en": "Sun",
+          "phonetic": "ta-foukt",
+          "usage": "Soleil"
+        },
+        {
+          "id": "nat_005",
+          "kab_latin": "Aggur",
+          "kab_tifinagh": "ⴰⴳⴳⵓⵔ",
+          "fr": "Lune",
+          "ar": "قمر",
+          "en": "Moon",
+          "phonetic": "ag-gour",
+          "usage": "Lune"
+        },
+        {
+          "id": "nat_006",
+          "kab_latin": "Itri",
+          "kab_tifinagh": "ⵉⵜⵔⵉ",
+          "fr": "Étoile",
+          "ar": "نجمة",
+          "en": "Star",
+          "phonetic": "i-tri",
+          "usage": "Étoile"
+        },
+        {
+          "id": "nat_007",
+          "kab_latin": "Igenni",
+          "kab_tifinagh": "ⵉⴳⵏⵏⵉ",
+          "fr": "Ciel",
+          "ar": "سماء",
+          "en": "Sky",
+          "phonetic": "i-gen-ni",
+          "usage": "Ciel"
+        },
+        {
+          "id": "nat_008",
+          "kab_latin": "Akal",
+          "kab_tifinagh": "ⴰⴽⴰⵍ",
+          "fr": "Terre",
+          "ar": "أرض",
+          "en": "Earth / Land",
+          "phonetic": "a-kal",
+          "usage": "Terre"
+        },
+        {
+          "id": "nat_009",
+          "kab_latin": "Aman",
+          "kab_tifinagh": "ⴰⵎⴰⵏ",
+          "fr": "Eau",
+          "ar": "ماء",
+          "en": "Water",
+          "phonetic": "a-man",
+          "usage": "Eau"
+        },
+        {
+          "id": "nat_010",
+          "kab_latin": "Timessi",
+          "kab_tifinagh": "ⵜⵉⵎⵙⵙⵉ",
+          "fr": "Feu",
+          "ar": "نار",
+          "en": "Fire",
+          "phonetic": "ti-mes-si",
+          "usage": "Feu"
+        },
+        {
+          "id": "nat_011",
+          "kab_latin": "Adu",
+          "kab_tifinagh": "ⴰⴷⵓ",
+          "fr": "Vent",
+          "ar": "ريح",
+          "en": "Wind",
+          "phonetic": "a-dou",
+          "usage": "Vent"
+        },
+        {
+          "id": "nat_012",
+          "kab_latin": "Asigna",
+          "kab_tifinagh": "ⴰⵙⵉⴳⵏⴰ",
+          "fr": "Nuage",
+          "ar": "سحابة",
+          "en": "Cloud",
+          "phonetic": "a-sig-na",
+          "usage": "Nuage"
+        },
+        {
+          "id": "nat_013",
+          "kab_latin": "Anzar",
+          "kab_tifinagh": "ⴰⵏⵣⴰⵔ",
+          "fr": "Pluie",
+          "ar": "مطر",
+          "en": "Rain",
+          "phonetic": "an-zar",
+          "usage": "Pluie"
+        },
+        {
+          "id": "nat_014",
+          "kab_latin": "Adfel",
+          "kab_tifinagh": "ⴰⴷⴼⵍ",
+          "fr": "Neige",
+          "ar": "ثلج",
+          "en": "Snow",
+          "phonetic": "ad-fel",
+          "usage": "Neige"
+        },
+        {
+          "id": "nat_015",
+          "kab_latin": "Tasaft",
+          "kab_tifinagh": "ⵜⴰⵙⴰⴼⵜ",
+          "fr": "Chêne",
+          "ar": "شجرة البلوط",
+          "en": "Oak tree",
+          "phonetic": "ta-saft",
+          "usage": "Arbre typique de Kabylie"
+        },
+        {
+          "id": "nat_016",
+          "kab_latin": "Tazart",
+          "kab_tifinagh": "ⵜⴰⵣⴰⵔⵜ",
+          "fr": "Figuier",
+          "ar": "شجرة التين",
+          "en": "Fig tree",
+          "phonetic": "ta-zart",
+          "usage": "Figuier"
+        },
+        {
+          "id": "nat_017",
+          "kab_latin": "Azemmur",
+          "kab_tifinagh": "ⴰⵣⵎⵎⵓⵔ",
+          "fr": "Olivier",
+          "ar": "شجرة الزيتون",
+          "en": "Olive tree",
+          "phonetic": "a-zem-mour",
+          "usage": "Olivier"
+        },
+        {
+          "id": "nat_018",
+          "kab_latin": "Ibawen",
+          "kab_tifinagh": "ⵉⴱⴰⵡⵏ",
+          "fr": "Fèves",
+          "ar": "فول",
+          "en": "Broad beans",
+          "phonetic": "i-ba-wen",
+          "usage": "Légumineuse"
+        }
+      ]
+    },
+    {
+      "id": "verbs",
+      "name": {
+        "kab_latin": "Imyagen",
+        "kab_tifinagh": "ⵉⵎⵢⴰⴳⵏ",
+        "fr": "Verbes",
+        "ar": "أفعال",
+        "en": "Verbs"
+      },
+      "icon": "🏃",
+      "entries": [
+        {
+          "id": "vrb_001",
+          "kab_latin": "Ečč",
+          "kab_tifinagh": "ⵛⵛ",
+          "fr": "Manger",
+          "ar": "أكل",
+          "en": "To eat",
+          "phonetic": "etch",
+          "usage": "Verbe manger"
+        },
+        {
+          "id": "vrb_002",
+          "kab_latin": "Su",
+          "kab_tifinagh": "ⵙⵓ",
+          "fr": "Boire",
+          "ar": "شرب",
+          "en": "To drink",
+          "phonetic": "sou",
+          "usage": "Verbe boire"
+        },
+        {
+          "id": "vrb_003",
+          "kab_latin": "Ṭṭes",
+          "kab_tifinagh": "ⵟⵟⵙ",
+          "fr": "Dormir",
+          "ar": "نام",
+          "en": "To sleep",
+          "phonetic": "ttes",
+          "usage": "Verbe dormir"
+        },
+        {
+          "id": "vrb_004",
+          "kab_latin": "Ddu",
+          "kab_tifinagh": "ⴷⴷⵓ",
+          "fr": "Aller / Marcher",
+          "ar": "ذهب / مشى",
+          "en": "To go / To walk",
+          "phonetic": "ddou",
+          "usage": "Verbe aller"
+        },
+        {
+          "id": "vrb_005",
+          "kab_latin": "Awi",
+          "kab_tifinagh": "ⴰⵡⵉ",
+          "fr": "Apporter",
+          "ar": "جلب",
+          "en": "To bring",
+          "phonetic": "a-wi",
+          "usage": "Verbe apporter"
+        },
+        {
+          "id": "vrb_006",
+          "kab_latin": "Ini",
+          "kab_tifinagh": "ⵉⵏⵉ",
+          "fr": "Dire",
+          "ar": "قال",
+          "en": "To say",
+          "phonetic": "i-ni",
+          "usage": "Verbe dire"
+        },
+        {
+          "id": "vrb_007",
+          "kab_latin": "Sel",
+          "kab_tifinagh": "ⵙⵍ",
+          "fr": "Écouter / Entendre",
+          "ar": "سمع",
+          "en": "To listen / To hear",
+          "phonetic": "sel",
+          "usage": "Verbe écouter"
+        },
+        {
+          "id": "vrb_008",
+          "kab_latin": "Ẓer",
+          "kab_tifinagh": "ⵥⵔ",
+          "fr": "Voir",
+          "ar": "رأى",
+          "en": "To see",
+          "phonetic": "zer",
+          "usage": "Verbe voir"
+        },
+        {
+          "id": "vrb_009",
+          "kab_latin": "Af",
+          "kab_tifinagh": "ⴰⴼ",
+          "fr": "Trouver",
+          "ar": "وجد",
+          "en": "To find",
+          "phonetic": "af",
+          "usage": "Verbe trouver"
+        },
+        {
+          "id": "vrb_010",
+          "kab_latin": "Ṛuḥ",
+          "kab_tifinagh": "ⵕⵓⵃ",
+          "fr": "Partir",
+          "ar": "ذهب / رحل",
+          "en": "To leave / To go",
+          "phonetic": "rouh",
+          "usage": "Verbe partir"
+        },
+        {
+          "id": "vrb_011",
+          "kab_latin": "As-d",
+          "kab_tifinagh": "ⴰⵙ-ⴷ",
+          "fr": "Venir",
+          "ar": "جاء",
+          "en": "To come",
+          "phonetic": "as-d",
+          "usage": "Verbe venir"
+        },
+        {
+          "id": "vrb_012",
+          "kab_latin": "Xdem",
+          "kab_tifinagh": "ⵅⴷⵎ",
+          "fr": "Travailler",
+          "ar": "عمل",
+          "en": "To work",
+          "phonetic": "khdem",
+          "usage": "Verbe travailler"
+        },
+        {
+          "id": "vrb_013",
+          "kab_latin": "Γer",
+          "kab_tifinagh": "ⵖⵔ",
+          "fr": "Lire / Étudier",
+          "ar": "قرأ / درس",
+          "en": "To read / To study",
+          "phonetic": "gher",
+          "usage": "Verbe lire"
+        },
+        {
+          "id": "vrb_014",
+          "kab_latin": "Aru",
+          "kab_tifinagh": "ⴰⵔⵓ",
+          "fr": "Écrire",
+          "ar": "كتب",
+          "en": "To write",
+          "phonetic": "a-rou",
+          "usage": "Verbe écrire"
+        },
+        {
+          "id": "vrb_015",
+          "kab_latin": "Ḥemmel",
+          "kab_tifinagh": "ⵃⵎⵎⵍ",
+          "fr": "Aimer",
+          "ar": "أحب",
+          "en": "To love",
+          "phonetic": "hem-mel",
+          "usage": "Verbe aimer"
+        },
+        {
+          "id": "vrb_016",
+          "kab_latin": "Ssutṛ",
+          "kab_tifinagh": "ⵙⵙⵓⵜⵕ",
+          "fr": "Demander",
+          "ar": "طلب",
+          "en": "To ask",
+          "phonetic": "ssou-ter",
+          "usage": "Verbe demander"
+        }
+      ]
+    },
+    {
+      "id": "expressions",
+      "name": {
+        "kab_latin": "Tiwinas",
+        "kab_tifinagh": "ⵜⵉⵡⵉⵏⴰⵙ",
+        "fr": "Expressions",
+        "ar": "تعبيرات",
+        "en": "Expressions"
+      },
+      "icon": "💬",
+      "entries": [
+        {
+          "id": "exp_001",
+          "kab_latin": "Lḥamdullah",
+          "kab_tifinagh": "ⵍⵃⵎⴷⵓⵍⵍⴰⵀ",
+          "fr": "Dieu merci",
+          "ar": "الحمد لله",
+          "en": "Thank God",
+          "phonetic": "l-ham-dou-llah",
+          "usage": "Expression de gratitude"
+        },
+        {
+          "id": "exp_002",
+          "kab_latin": "Inchallah",
+          "kab_tifinagh": "ⵉⵏⵛⴰⵍⵍⴰⵀ",
+          "fr": "Si Dieu le veut",
+          "ar": "إن شاء الله",
+          "en": "God willing",
+          "phonetic": "in-chal-lah",
+          "usage": "Espoir pour le futur"
+        },
+        {
+          "id": "exp_003",
+          "kab_latin": "Rbbi yesseḥlu",
+          "kab_tifinagh": "ⵔⴱⴱⵉ ⵢⵙⵙⵃⵍⵓ",
+          "fr": "Que Dieu te protège",
+          "ar": "الله يحميك",
+          "en": "May God protect you",
+          "phonetic": "reb-bi yes-seh-lou",
+          "usage": "Bénédiction"
+        },
+        {
+          "id": "exp_004",
+          "kab_latin": "Saḥḥa",
+          "kab_tifinagh": "ⵙⴰⵃⵃⴰ",
+          "fr": "Bravo / Bien fait",
+          "ar": "صحة / برافو",
+          "en": "Well done / Cheers",
+          "phonetic": "sah-ha",
+          "usage": "Félicitation"
+        },
+        {
+          "id": "exp_005",
+          "kab_latin": "Aql-ik labas?",
+          "kab_tifinagh": "ⴰⵇⵍ-ⵉⴽ ⵍⴰⴱⴰⵙ?",
+          "fr": "Tu vas bien?",
+          "ar": "أنت بخير؟",
+          "en": "Are you okay?",
+          "phonetic": "aq-lik la-bas",
+          "usage": "Question de santé"
+        },
+        {
+          "id": "exp_006",
+          "kab_latin": "Ur ttagad ara",
+          "kab_tifinagh": "ⵓⵔ ⵜⵜⴰⴳⴰⴷ ⴰⵔⴰ",
+          "fr": "N'aie pas peur",
+          "ar": "لا تخف",
+          "en": "Don't be afraid",
+          "phonetic": "our tta-gad a-ra",
+          "usage": "Rassurer quelqu'un"
+        },
+        {
+          "id": "exp_007",
+          "kab_latin": "Ayen i tebγid?",
+          "kab_tifinagh": "ⴰⵢⵏ ⵉ ⵜⴱⵖⵉⴷ?",
+          "fr": "Que veux-tu?",
+          "ar": "ماذا تريد؟",
+          "en": "What do you want?",
+          "phonetic": "a-yen i teb-ghid",
+          "usage": "Question"
+        },
+        {
+          "id": "exp_008",
+          "kab_latin": "Ay amcum!",
+          "kab_tifinagh": "ⴰⵢ ⴰⵎⵛⵓⵎ!",
+          "fr": "Quel malheur!",
+          "ar": "يا للأسف!",
+          "en": "How unfortunate!",
+          "phonetic": "ay am-choum",
+          "usage": "Expression de tristesse"
+        },
+        {
+          "id": "exp_009",
+          "kab_latin": "D acu-t wagi?",
+          "kab_tifinagh": "ⴷ ⴰⵛⵓ-ⵜ ⵡⴰⴳⵉ?",
+          "fr": "Qu'est-ce que c'est?",
+          "ar": "ما هذا؟",
+          "en": "What is this?",
+          "phonetic": "d a-chout wa-gui",
+          "usage": "Question sur quelque chose"
+        },
+        {
+          "id": "exp_010",
+          "kab_latin": "Anida telliḍ?",
+          "kab_tifinagh": "ⴰⵏⵉⴷⴰ ⵜⵍⵍⵉⴹ?",
+          "fr": "Où es-tu?",
+          "ar": "أين أنت؟",
+          "en": "Where are you?",
+          "phonetic": "a-ni-da tel-lid",
+          "usage": "Question de lieu"
+        },
+        {
+          "id": "exp_011",
+          "kab_latin": "Ay aɛziz!",
+          "kab_tifinagh": "ⴰⵢ ⴰⵄⵣⵉⵣ!",
+          "fr": "Mon cher!",
+          "ar": "يا عزيزي!",
+          "en": "My dear!",
+          "phonetic": "ay a-âziz",
+          "usage": "Terme affectueux"
+        },
+        {
+          "id": "exp_012",
+          "kab_latin": "Refdeɣ aqerru-w",
+          "kab_tifinagh": "ⵔⴼⴷⵖ ⴰⵇⵔⵔⵓ-ⵡ",
+          "fr": "J'ai mal à la tête",
+          "ar": "رأسي يؤلمني",
+          "en": "I have a headache",
+          "phonetic": "ref-degh aq-rer-rou",
+          "usage": "Expression de douleur"
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "name": {
+        "kab_latin": "Učči",
+        "kab_tifinagh": "ⵓⵛⵛⵉ",
+        "fr": "Nourriture",
+        "ar": "طعام",
+        "en": "Food"
+      },
+      "icon": "🍽️",
+      "entries": [
+        {
+          "id": "fod_001",
+          "kab_latin": "Aγrum",
+          "kab_tifinagh": "ⴰⵖⵔⵓⵎ",
+          "fr": "Pain",
+          "ar": "خبز",
+          "en": "Bread",
+          "phonetic": "a-ghroum",
+          "usage": "Pain"
+        },
+        {
+          "id": "fod_002",
+          "kab_latin": "Seksu",
+          "kab_tifinagh": "ⵙⴽⵙⵓ",
+          "fr": "Couscous",
+          "ar": "كسكس",
+          "en": "Couscous",
+          "phonetic": "sek-sou",
+          "usage": "Plat traditionnel"
+        },
+        {
+          "id": "fod_003",
+          "kab_latin": "Zzit",
+          "kab_tifinagh": "ⵣⵣⵉⵜ",
+          "fr": "Huile (d'olive)",
+          "ar": "زيت (الزيتون)",
+          "en": "Oil (olive)",
+          "phonetic": "zzit",
+          "usage": "Huile"
+        },
+        {
+          "id": "fod_004",
+          "kab_latin": "Ayefki",
+          "kab_tifinagh": "ⴰⵢⴼⴽⵉ",
+          "fr": "Lait",
+          "ar": "حليب",
+          "en": "Milk",
+          "phonetic": "a-yef-ki",
+          "usage": "Lait"
+        },
+        {
+          "id": "fod_005",
+          "kab_latin": "Tament",
+          "kab_tifinagh": "ⵜⴰⵎⵏⵜ",
+          "fr": "Miel",
+          "ar": "عسل",
+          "en": "Honey",
+          "phonetic": "ta-ment",
+          "usage": "Miel"
+        },
+        {
+          "id": "fod_006",
+          "kab_latin": "Aksum",
+          "kab_tifinagh": "ⴰⴽⵙⵓⵎ",
+          "fr": "Viande",
+          "ar": "لحم",
+          "en": "Meat",
+          "phonetic": "ak-soum",
+          "usage": "Viande"
+        },
+        {
+          "id": "fod_007",
+          "kab_latin": "Aslem",
+          "kab_tifinagh": "ⴰⵙⵍⵎ",
+          "fr": "Poisson",
+          "ar": "سمك",
+          "en": "Fish",
+          "phonetic": "as-lem",
+          "usage": "Poisson"
+        },
+        {
+          "id": "fod_008",
+          "kab_latin": "Timellalin",
+          "kab_tifinagh": "ⵜⵉⵎⵍⵍⴰⵍⵉⵏ",
+          "fr": "Œufs",
+          "ar": "بيض",
+          "en": "Eggs",
+          "phonetic": "ti-mel-la-lin",
+          "usage": "Œufs"
+        },
+        {
+          "id": "fod_009",
+          "kab_latin": "Lexḍar",
+          "kab_tifinagh": "ⵍⵅⴹⴰⵔ",
+          "fr": "Légumes",
+          "ar": "خضار",
+          "en": "Vegetables",
+          "phonetic": "lekh-dar",
+          "usage": "Légumes"
+        },
+        {
+          "id": "fod_010",
+          "kab_latin": "Tigrest",
+          "kab_tifinagh": "ⵜⵉⴳⵔⵙⵜ",
+          "fr": "Galette",
+          "ar": "رغيف",
+          "en": "Flatbread",
+          "phonetic": "ti-grest",
+          "usage": "Pain plat traditionnel"
+        },
+        {
+          "id": "fod_011",
+          "kab_latin": "Tazart",
+          "kab_tifinagh": "ⵜⴰⵣⴰⵔⵜ",
+          "fr": "Figues",
+          "ar": "تين",
+          "en": "Figs",
+          "phonetic": "ta-zart",
+          "usage": "Fruit"
+        },
+        {
+          "id": "fod_012",
+          "kab_latin": "Aγi",
+          "kab_tifinagh": "ⴰⵖⵉ",
+          "fr": "Petit-lait / Babeurre",
+          "ar": "لبن",
+          "en": "Buttermilk",
+          "phonetic": "a-ghi",
+          "usage": "Boisson lactée"
+        }
+      ]
+    },
+    {
+      "id": "colors",
+      "name": {
+        "kab_latin": "Initen",
+        "kab_tifinagh": "ⵉⵏⵉⵜⵏ",
+        "fr": "Couleurs",
+        "ar": "ألوان",
+        "en": "Colors"
+      },
+      "icon": "🎨",
+      "entries": [
+        {
+          "id": "clr_001",
+          "kab_latin": "Azegzaw",
+          "kab_tifinagh": "ⴰⵣⴳⵣⴰⵡ",
+          "fr": "Vert / Bleu",
+          "ar": "أخضر / أزرق",
+          "en": "Green / Blue",
+          "phonetic": "a-zeg-zaw",
+          "usage": "Couleur verte ou bleue"
+        },
+        {
+          "id": "clr_002",
+          "kab_latin": "Awerγ",
+          "kab_tifinagh": "ⴰⵡⵔⵖ",
+          "fr": "Jaune",
+          "ar": "أصفر",
+          "en": "Yellow",
+          "phonetic": "a-wergh",
+          "usage": "Couleur jaune"
+        },
+        {
+          "id": "clr_003",
+          "kab_latin": "Azeggaγ",
+          "kab_tifinagh": "ⴰⵣⴳⴳⴰⵖ",
+          "fr": "Rouge",
+          "ar": "أحمر",
+          "en": "Red",
+          "phonetic": "a-zeg-gagh",
+          "usage": "Couleur rouge"
+        },
+        {
+          "id": "clr_004",
+          "kab_latin": "Amellal",
+          "kab_tifinagh": "ⴰⵎⵍⵍⴰⵍ",
+          "fr": "Blanc",
+          "ar": "أبيض",
+          "en": "White",
+          "phonetic": "a-mel-lal",
+          "usage": "Couleur blanche"
+        },
+        {
+          "id": "clr_005",
+          "kab_latin": "Aberkan",
+          "kab_tifinagh": "ⴰⴱⵔⴽⴰⵏ",
+          "fr": "Noir",
+          "ar": "أسود",
+          "en": "Black",
+          "phonetic": "a-ber-kan",
+          "usage": "Couleur noire"
+        },
+        {
+          "id": "clr_006",
+          "kab_latin": "Acenwi",
+          "kab_tifinagh": "ⴰⵛⵏⵡⵉ",
+          "fr": "Orange",
+          "ar": "برتقالي",
+          "en": "Orange",
+          "phonetic": "a-chen-wi",
+          "usage": "Couleur orange"
+        }
+      ]
+    },
+    {
+      "id": "time",
+      "name": {
+        "kab_latin": "Akud",
+        "kab_tifinagh": "ⴰⴽⵓⴷ",
+        "fr": "Temps",
+        "ar": "الوقت",
+        "en": "Time"
+      },
+      "icon": "⏰",
+      "entries": [
+        {
+          "id": "tim_001",
+          "kab_latin": "Ass",
+          "kab_tifinagh": "ⴰⵙⵙ",
+          "fr": "Jour",
+          "ar": "يوم",
+          "en": "Day",
+          "phonetic": "ass",
+          "usage": "Jour"
+        },
+        {
+          "id": "tim_002",
+          "kab_latin": "Iḍ",
+          "kab_tifinagh": "ⵉⴹ",
+          "fr": "Nuit",
+          "ar": "ليل",
+          "en": "Night",
+          "phonetic": "id",
+          "usage": "Nuit"
+        },
+        {
+          "id": "tim_003",
+          "kab_latin": "Ṣṣbeḥ",
+          "kab_tifinagh": "ⵚⵚⴱⵃ",
+          "fr": "Matin",
+          "ar": "صباح",
+          "en": "Morning",
+          "phonetic": "ssbeh",
+          "usage": "Matin"
+        },
+        {
+          "id": "tim_004",
+          "kab_latin": "Tmeddit",
+          "kab_tifinagh": "ⵜⵎⴷⴷⵉⵜ",
+          "fr": "Soir / Après-midi",
+          "ar": "مساء",
+          "en": "Evening / Afternoon",
+          "phonetic": "tmed-dit",
+          "usage": "Soir"
+        },
+        {
+          "id": "tim_005",
+          "kab_latin": "Ass-a",
+          "kab_tifinagh": "ⴰⵙⵙ-ⴰ",
+          "fr": "Aujourd'hui",
+          "ar": "اليوم",
+          "en": "Today",
+          "phonetic": "ass-a",
+          "usage": "Ce jour"
+        },
+        {
+          "id": "tim_006",
+          "kab_latin": "Iḍelli",
+          "kab_tifinagh": "ⵉⴹⵍⵍⵉ",
+          "fr": "Hier",
+          "ar": "أمس",
+          "en": "Yesterday",
+          "phonetic": "i-del-li",
+          "usage": "Hier"
+        },
+        {
+          "id": "tim_007",
+          "kab_latin": "Azekka",
+          "kab_tifinagh": "ⴰⵣⴽⴽⴰ",
+          "fr": "Demain",
+          "ar": "غدا",
+          "en": "Tomorrow",
+          "phonetic": "a-zek-ka",
+          "usage": "Demain"
+        },
+        {
+          "id": "tim_008",
+          "kab_latin": "Imalas",
+          "kab_tifinagh": "ⵉⵎⴰⵍⴰⵙ",
+          "fr": "Semaine",
+          "ar": "أسبوع",
+          "en": "Week",
+          "phonetic": "i-ma-las",
+          "usage": "Semaine"
+        },
+        {
+          "id": "tim_009",
+          "kab_latin": "Aggur",
+          "kab_tifinagh": "ⴰⴳⴳⵓⵔ",
+          "fr": "Mois",
+          "ar": "شهر",
+          "en": "Month",
+          "phonetic": "ag-gour",
+          "usage": "Mois"
+        },
+        {
+          "id": "tim_010",
+          "kab_latin": "Aseggas",
+          "kab_tifinagh": "ⴰⵙⴳⴳⴰⵙ",
+          "fr": "Année",
+          "ar": "سنة",
+          "en": "Year",
+          "phonetic": "a-seg-gas",
+          "usage": "Année"
+        },
+        {
+          "id": "tim_011",
+          "kab_latin": "Tura",
+          "kab_tifinagh": "ⵜⵓⵔⴰ",
+          "fr": "Maintenant",
+          "ar": "الآن",
+          "en": "Now",
+          "phonetic": "tou-ra",
+          "usage": "Moment présent"
+        }
+      ]
+    },
+    {
+      "id": "body",
+      "name": {
+        "kab_latin": "Tafekka",
+        "kab_tifinagh": "ⵜⴰⴼⴽⴽⴰ",
+        "fr": "Corps",
+        "ar": "جسم",
+        "en": "Body"
+      },
+      "icon": "🦶",
+      "entries": [
+        {
+          "id": "bdy_001",
+          "kab_latin": "Aqerru",
+          "kab_tifinagh": "ⴰⵇⵔⵔⵓ",
+          "fr": "Tête",
+          "ar": "رأس",
+          "en": "Head",
+          "phonetic": "a-qer-rou",
+          "usage": "Tête"
+        },
+        {
+          "id": "bdy_002",
+          "kab_latin": "Allen",
+          "kab_tifinagh": "ⴰⵍⵍⵏ",
+          "fr": "Yeux",
+          "ar": "عيون",
+          "en": "Eyes",
+          "phonetic": "al-len",
+          "usage": "Yeux"
+        },
+        {
+          "id": "bdy_003",
+          "kab_latin": "Imeẓẓuγen",
+          "kab_tifinagh": "ⵉⵎⵥⵥⵓⵖⵏ",
+          "fr": "Oreilles",
+          "ar": "آذان",
+          "en": "Ears",
+          "phonetic": "i-mez-zou-ghen",
+          "usage": "Oreilles"
+        },
+        {
+          "id": "bdy_004",
+          "kab_latin": "Anzaren",
+          "kab_tifinagh": "ⴰⵏⵣⴰⵔⵏ",
+          "fr": "Nez",
+          "ar": "أنف",
+          "en": "Nose",
+          "phonetic": "an-za-ren",
+          "usage": "Nez"
+        },
+        {
+          "id": "bdy_005",
+          "kab_latin": "Imi",
+          "kab_tifinagh": "ⵉⵎⵉ",
+          "fr": "Bouche",
+          "ar": "فم",
+          "en": "Mouth",
+          "phonetic": "i-mi",
+          "usage": "Bouche"
+        },
+        {
+          "id": "bdy_006",
+          "kab_latin": "Ifassen",
+          "kab_tifinagh": "ⵉⴼⴰⵙⵙⵏ",
+          "fr": "Mains",
+          "ar": "أيدي",
+          "en": "Hands",
+          "phonetic": "i-fas-sen",
+          "usage": "Mains"
+        },
+        {
+          "id": "bdy_007",
+          "kab_latin": "Iḍarren",
+          "kab_tifinagh": "ⵉⴹⴰⵔⵔⵏ",
+          "fr": "Pieds",
+          "ar": "أقدام",
+          "en": "Feet",
+          "phonetic": "i-dar-ren",
+          "usage": "Pieds"
+        },
+        {
+          "id": "bdy_008",
+          "kab_latin": "Ul",
+          "kab_tifinagh": "ⵓⵍ",
+          "fr": "Cœur",
+          "ar": "قلب",
+          "en": "Heart",
+          "phonetic": "oul",
+          "usage": "Cœur"
+        },
+        {
+          "id": "bdy_009",
+          "kab_latin": "Acebbub",
+          "kab_tifinagh": "ⴰⵛⴱⴱⵓⴱ",
+          "fr": "Cheveux",
+          "ar": "شعر",
+          "en": "Hair",
+          "phonetic": "a-cheb-boub",
+          "usage": "Cheveux"
+        },
+        {
+          "id": "bdy_010",
+          "kab_latin": "Aɛrur",
+          "kab_tifinagh": "ⴰⵄⵔⵓⵔ",
+          "fr": "Dos",
+          "ar": "ظهر",
+          "en": "Back",
+          "phonetic": "a-ârour",
+          "usage": "Dos"
+        }
+      ]
+    },
+    {
+      "id": "places",
+      "name": {
+        "kab_latin": "Imukan",
+        "kab_tifinagh": "ⵉⵎⵓⴽⴰⵏ",
+        "fr": "Lieux",
+        "ar": "أماكن",
+        "en": "Places"
+      },
+      "icon": "🏠",
+      "entries": [
+        {
+          "id": "plc_001",
+          "kab_latin": "Axxam",
+          "kab_tifinagh": "ⴰⵅⵅⴰⵎ",
+          "fr": "Maison",
+          "ar": "منزل",
+          "en": "House",
+          "phonetic": "akh-kham",
+          "usage": "Maison"
+        },
+        {
+          "id": "plc_002",
+          "kab_latin": "Taddart",
+          "kab_tifinagh": "ⵜⴰⴷⴷⴰⵔⵜ",
+          "fr": "Village",
+          "ar": "قرية",
+          "en": "Village",
+          "phonetic": "tad-dart",
+          "usage": "Village"
+        },
+        {
+          "id": "plc_003",
+          "kab_latin": "Tamdint",
+          "kab_tifinagh": "ⵜⴰⵎⴷⵉⵏⵜ",
+          "fr": "Ville",
+          "ar": "مدينة",
+          "en": "City",
+          "phonetic": "tam-dint",
+          "usage": "Ville"
+        },
+        {
+          "id": "plc_004",
+          "kab_latin": "Tamurt",
+          "kab_tifinagh": "ⵜⴰⵎⵓⵔⵜ",
+          "fr": "Pays / Terre natale",
+          "ar": "بلد / وطن",
+          "en": "Country / Homeland",
+          "phonetic": "ta-mourt",
+          "usage": "Pays ou patrie"
+        },
+        {
+          "id": "plc_005",
+          "kab_latin": "Lǧameɛ",
+          "kab_tifinagh": "ⵍⵊⴰⵎⵄ",
+          "fr": "Mosquée",
+          "ar": "مسجد",
+          "en": "Mosque",
+          "phonetic": "l-ja-meâ",
+          "usage": "Lieu de culte"
+        },
+        {
+          "id": "plc_006",
+          "kab_latin": "Ssuq",
+          "kab_tifinagh": "ⵙⵙⵓⵇ",
+          "fr": "Marché",
+          "ar": "سوق",
+          "en": "Market",
+          "phonetic": "ssouq",
+          "usage": "Marché"
+        },
+        {
+          "id": "plc_007",
+          "kab_latin": "Aγerbaz",
+          "kab_tifinagh": "ⴰⵖⵔⴱⴰⵣ",
+          "fr": "École",
+          "ar": "مدرسة",
+          "en": "School",
+          "phonetic": "a-gher-baz",
+          "usage": "École"
+        },
+        {
+          "id": "plc_008",
+          "kab_latin": "Abrid",
+          "kab_tifinagh": "ⴰⴱⵔⵉⴷ",
+          "fr": "Route / Chemin",
+          "ar": "طريق",
+          "en": "Road / Path",
+          "phonetic": "ab-rid",
+          "usage": "Route"
+        }
+      ]
+    },
+    {
+      "id": "proverbs",
+      "name": {
+        "kab_latin": "Inzan",
+        "kab_tifinagh": "ⵉⵏⵣⴰⵏ",
+        "fr": "Proverbes",
+        "ar": "أمثال",
+        "en": "Proverbs"
+      },
+      "icon": "📜",
+      "entries": [
+        {
+          "id": "prv_001",
+          "kab_latin": "Win yebγan tamment, yesseṛ tisent",
+          "kab_tifinagh": "ⵡⵉⵏ ⵢⴱⵖⴰⵏ ⵜⴰⵎⵏⵜ, ⵢⵙⵙⵕ ⵜⵉⵙⵏⵜ",
+          "fr": "Qui veut du miel doit supporter les piqûres",
+          "ar": "من يريد العسل يتحمل لسعات النحل",
+          "en": "Who wants honey must endure the bee stings",
+          "phonetic": "win yeb-ghan ta-ment, yes-ser ti-sent",
+          "usage": "Sur l'effort et la récompense"
+        },
+        {
+          "id": "prv_002",
+          "kab_latin": "Yiwen ufus ur ičeṭṭeḥ",
+          "kab_tifinagh": "ⵢⵉⵡⵏ ⵓⴼⵓⵙ ⵓⵔ ⵉⵛⵟⵟⵃ",
+          "fr": "Une seule main n'applaudit pas",
+          "ar": "يد واحدة لا تصفق",
+          "en": "One hand doesn't clap",
+          "phonetic": "yi-wen ou-fous our i-chet-teh",
+          "usage": "Sur l'entraide"
+        },
+        {
+          "id": "prv_003",
+          "kab_latin": "Awal n lxir d asawen",
+          "kab_tifinagh": "ⴰⵡⴰⵍ ⵏ ⵍⵅⵉⵔ ⴷ ⴰⵙⴰⵡⵏ",
+          "fr": "La bonne parole s'élève",
+          "ar": "الكلمة الطيبة ترتفع",
+          "en": "Good words rise up",
+          "phonetic": "a-wal n l-khir d a-sa-wen",
+          "usage": "Sur la bonté"
+        },
+        {
+          "id": "prv_004",
+          "kab_latin": "Ur yelli fell-as d acu ara yeččar",
+          "kab_tifinagh": "ⵓⵔ ⵢⵍⵍⵉ ⴼⵍⵍ-ⴰⵙ ⴷ ⴰⵛⵓ ⴰⵔⴰ ⵢⵛⵛⴰⵔ",
+          "fr": "Il n'y a rien qui le remplisse",
+          "ar": "لا شيء يملأه",
+          "en": "Nothing can fill it",
+          "phonetic": "our yel-li fel-las d a-chou a-ra yet-char",
+          "usage": "Sur l'avidité"
+        },
+        {
+          "id": "prv_005",
+          "kab_latin": "Aqerru n wuccen d yiwet tikkelt",
+          "kab_tifinagh": "ⴰⵇⵔⵔⵓ ⵏ ⵡⵓⵛⵛⵏ ⴷ ⵢⵉⵡⵜ ⵜⵉⴽⴽⵍⵜ",
+          "fr": "On ne voit la tête du chacal qu'une fois",
+          "ar": "رأس ابن آوى لا يُرى إلا مرة واحدة",
+          "en": "The jackal's head is seen only once",
+          "phonetic": "a-qer-rou n wou-chen d yi-wet tik-kelt",
+          "usage": "Sur la rareté et la méfiance"
+        },
+        {
+          "id": "prv_006",
+          "kab_latin": "Aγyul ur yezmir ad yili d aɛudiw",
+          "kab_tifinagh": "ⴰⵖⵢⵓⵍ ⵓⵔ ⵢⵣⵎⵉⵔ ⴰⴷ ⵢⵉⵍⵉ ⴷ ⴰⵄⵓⴷⵉⵡ",
+          "fr": "L'âne ne peut pas être un cheval",
+          "ar": "الحمار لا يمكن أن يكون حصانًا",
+          "en": "A donkey cannot be a horse",
+          "phonetic": "a-ghyoul our yez-mir ad yi-li d a-âou-diw",
+          "usage": "Sur la nature de chacun"
+        }
+      ]
+    },
+    {
+      "id": "animals",
+      "name": {
+        "kab_latin": "Iɣersiwen",
+        "kab_tifinagh": "ⵉⵖⵔⵙⵉⵡⵏ",
+        "fr": "Animaux",
+        "ar": "حيوانات",
+        "en": "Animals"
+      },
+      "icon": "🐑",
+      "entries": [
+        {
+          "id": "anm_001",
+          "kab_latin": "Aydi",
+          "kab_tifinagh": "ⴰⵢⴷⵉ",
+          "fr": "Chien",
+          "ar": "كلب",
+          "en": "Dog",
+          "phonetic": "ay-di",
+          "usage": "Chien"
+        },
+        {
+          "id": "anm_002",
+          "kab_latin": "Amcic",
+          "kab_tifinagh": "ⴰⵎⵛⵉⵛ",
+          "fr": "Chat",
+          "ar": "قط",
+          "en": "Cat",
+          "phonetic": "am-chich",
+          "usage": "Chat"
+        },
+        {
+          "id": "anm_003",
+          "kab_latin": "Aɛudiw",
+          "kab_tifinagh": "ⴰⵄⵓⴷⵉⵡ",
+          "fr": "Cheval",
+          "ar": "حصان",
+          "en": "Horse",
+          "phonetic": "a-âou-diw",
+          "usage": "Cheval"
+        },
+        {
+          "id": "anm_004",
+          "kab_latin": "Aγyul",
+          "kab_tifinagh": "ⴰⵖⵢⵓⵍ",
+          "fr": "Âne",
+          "ar": "حمار",
+          "en": "Donkey",
+          "phonetic": "a-ghyoul",
+          "usage": "Âne"
+        },
+        {
+          "id": "anm_005",
+          "kab_latin": "Tafunast",
+          "kab_tifinagh": "ⵜⴰⴼⵓⵏⴰⵙⵜ",
+          "fr": "Vache",
+          "ar": "بقرة",
+          "en": "Cow",
+          "phonetic": "ta-fou-nast",
+          "usage": "Vache"
+        },
+        {
+          "id": "anm_006",
+          "kab_latin": "Izimer",
+          "kab_tifinagh": "ⵉⵣⵉⵎⵔ",
+          "fr": "Agneau",
+          "ar": "حمل",
+          "en": "Lamb",
+          "phonetic": "i-zi-mer",
+          "usage": "Agneau"
+        },
+        {
+          "id": "anm_007",
+          "kab_latin": "Tixsi",
+          "kab_tifinagh": "ⵜⵉⵅⵙⵉ",
+          "fr": "Brebis",
+          "ar": "نعجة",
+          "en": "Sheep",
+          "phonetic": "ti-kh-si",
+          "usage": "Brebis"
+        },
+        {
+          "id": "anm_008",
+          "kab_latin": "Aγanim",
+          "kab_tifinagh": "ⴰⵖⴰⵏⵉⵎ",
+          "fr": "Roseau / Chameau",
+          "ar": "قصب / جمل",
+          "en": "Reed / Camel",
+          "phonetic": "a-gha-nim",
+          "usage": "Roseau ou chameau selon contexte"
+        },
+        {
+          "id": "anm_009",
+          "kab_latin": "Tasekkurt",
+          "kab_tifinagh": "ⵜⴰⵙⴽⴽⵓⵔⵜ",
+          "fr": "Perdrix",
+          "ar": "حجلة",
+          "en": "Partridge",
+          "phonetic": "ta-sek-kourt",
+          "usage": "Oiseau"
+        },
+        {
+          "id": "anm_010",
+          "kab_latin": "Tizitert",
+          "kab_tifinagh": "ⵜⵉⵣⵉⵜⵔⵜ",
+          "fr": "Abeille",
+          "ar": "نحلة",
+          "en": "Bee",
+          "phonetic": "ti-zi-tert",
+          "usage": "Insecte"
+        },
+        {
+          "id": "anm_011",
+          "kab_latin": "Ayazid",
+          "kab_tifinagh": "ⴰⵢⴰⵣⵉⴷ",
+          "fr": "Coq",
+          "ar": "ديك",
+          "en": "Rooster",
+          "phonetic": "a-ya-zid",
+          "usage": "Coq"
+        },
+        {
+          "id": "anm_012",
+          "kab_latin": "Tayazit",
+          "kab_tifinagh": "ⵜⴰⵢⴰⵣⵉⵜ",
+          "fr": "Poule",
+          "ar": "دجاجة",
+          "en": "Hen",
+          "phonetic": "ta-ya-zit",
+          "usage": "Poule"
+        }
+      ]
+    }
+  ],
+  "alphabet": {
+    "tifinagh": [
+      {"char": "ⴰ", "latin": "a", "name": "Ya", "phonetic": "a"},
+      {"char": "ⴱ", "latin": "b", "name": "Yab", "phonetic": "b"},
+      {"char": "ⴳ", "latin": "g", "name": "Yag", "phonetic": "g"},
+      {"char": "ⴷ", "latin": "d", "name": "Yad", "phonetic": "d"},
+      {"char": "ⴹ", "latin": "ḍ", "name": "Yaḍ", "phonetic": "d emphatique"},
+      {"char": "ⴻ", "latin": "e", "name": "Ye", "phonetic": "e"},
+      {"char": "ⴼ", "latin": "f", "name": "Yaf", "phonetic": "f"},
+      {"char": "ⴽ", "latin": "k", "name": "Yak", "phonetic": "k"},
+      {"char": "ⵀ", "latin": "h", "name": "Yah", "phonetic": "h"},
+      {"char": "ⵃ", "latin": "ḥ", "name": "Yaḥ", "phonetic": "h pharyngal"},
+      {"char": "ⵄ", "latin": "ɛ", "name": "Yaɛ", "phonetic": "aïn"},
+      {"char": "ⵅ", "latin": "x", "name": "Yax", "phonetic": "kh"},
+      {"char": "ⵇ", "latin": "q", "name": "Yaq", "phonetic": "q"},
+      {"char": "ⵉ", "latin": "i", "name": "Yi", "phonetic": "i"},
+      {"char": "ⵊ", "latin": "j", "name": "Yaj", "phonetic": "j"},
+      {"char": "ⵍ", "latin": "l", "name": "Yal", "phonetic": "l"},
+      {"char": "ⵎ", "latin": "m", "name": "Yam", "phonetic": "m"},
+      {"char": "ⵏ", "latin": "n", "name": "Yan", "phonetic": "n"},
+      {"char": "ⵓ", "latin": "u", "name": "Yu", "phonetic": "ou"},
+      {"char": "ⵔ", "latin": "r", "name": "Yar", "phonetic": "r"},
+      {"char": "ⵕ", "latin": "ṛ", "name": "Yaṛ", "phonetic": "r emphatique"},
+      {"char": "ⵖ", "latin": "ɣ", "name": "Yaɣ", "phonetic": "gh"},
+      {"char": "ⵙ", "latin": "s", "name": "Yas", "phonetic": "s"},
+      {"char": "ⵚ", "latin": "ṣ", "name": "Yaṣ", "phonetic": "s emphatique"},
+      {"char": "ⵛ", "latin": "c", "name": "Yac", "phonetic": "ch"},
+      {"char": "ⵜ", "latin": "t", "name": "Yat", "phonetic": "t"},
+      {"char": "ⵟ", "latin": "ṭ", "name": "Yaṭ", "phonetic": "t emphatique"},
+      {"char": "ⵡ", "latin": "w", "name": "Yaw", "phonetic": "w"},
+      {"char": "ⵢ", "latin": "y", "name": "Yay", "phonetic": "y"},
+      {"char": "ⵣ", "latin": "z", "name": "Yaz", "phonetic": "z"},
+      {"char": "ⵥ", "latin": "ẓ", "name": "Yaẓ", "phonetic": "z emphatique"}
+    ]
+  }
+}

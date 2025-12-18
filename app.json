@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "Kabyle - ⵜⴰⵇⴱⴰⵢⵍⵉⵜ",
+    "slug": "kabyle-translator",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1E88E5"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kabyle.translator"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1E88E5"
+      },
+      "package": "com.kabyle.translator",
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "description": "Application de traduction Kabyle avec support Tifinagh et Latin. Traduction bidirectionnelle Kabyle-Français-Arabe-Anglais.",
+    "primaryColor": "#1E88E5",
+    "extra": {
+      "supportedLanguages": ["kab_latin", "kab_tifinagh", "fr", "ar", "en"]
+    }
+  }
+}
