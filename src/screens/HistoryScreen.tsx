@@ -2,16 +2,196 @@ import React from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   FlatList,
   TouchableOpacity,
   Alert
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { COLORS, FONTS, SPACING, BORDER_RADIUS, SHADOWS, AMAZIGH_SYMBOL } from '../utils/theme';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useApp } from '../context/AppContext';
 import { getLanguageInfo } from '../services/translationService';
 import { HistoryItem } from '../types';
+
+// Inline styles matching the glassmorphism/gradient design
+const inlineStyles = {
+  container: {
+    flex: 1,
+    backgroundColor: '#667eea',
+  },
+  gradientBackground: {
+    flex: 1,
+  },
+  header: {
+    paddingTop: 20,
+    paddingHorizontal: 24,
+    paddingBottom: 24,
+  },
+  headerRow: {
+    flexDirection: 'row' as const,
+    alignItems: 'center' as const,
+    justifyContent: 'space-between' as const,
+  },
+  headerLeft: {
+    flexDirection: 'row' as const,
+    alignItems: 'center' as const,
+  },
+  amazighSymbol: {
+    fontSize: 36,
+    color: '#FFC107',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 4,
+    marginRight: 12,
+  },
+  headerTitle: {
+    fontSize: 28,
+    fontWeight: '700' as const,
+    color: '#FFFFFF',
+    textShadowColor: 'rgba(0, 0, 0, 0.2)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 2,
+  },
+  headerSubtitle: {
+    fontSize: 14,
+    color: 'rgba(255, 255, 255, 0.8)',
+    marginTop: 2,
+  },
+  clearButton: {
+    backgroundColor: 'rgba(229, 57, 53, 0.2)',
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(229, 57, 53, 0.3)',
+  },
+  clearButtonText: {
+    color: '#FFFFFF',
+    fontWeight: '600' as const,
+    fontSize: 14,
+  },
+  contentContainer: {
+    flex: 1,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    borderTopLeftRadius: 32,
+    borderTopRightRadius: 32,
+    paddingTop: 24,
+  },
+  listContent: {
+    paddingHorizontal: 16,
+    paddingBottom: 120,
+  },
+  historyCard: {
+    backgroundColor: 'rgba(255, 255, 255, 0.95)',
+    borderRadius: 20,
+    padding: 20,
+    marginBottom: 16,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.12,
+    shadowRadius: 16,
+    elevation: 8,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.5)',
+  },
+  langRow: {
+    flexDirection: 'row' as const,
+    alignItems: 'center' as const,
+    marginBottom: 16,
+  },
+  langBadge: {
+    flexDirection: 'row' as const,
+    alignItems: 'center' as const,
+    backgroundColor: 'rgba(102, 126, 234, 0.1)',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 12,
+  },
+  langFlag: {
+    fontSize: 16,
+    marginRight: 6,
+  },
+  langCode: {
+    fontSize: 12,
+    color: '#667eea',
+    fontWeight: '500' as const,
+  },
+  arrow: {
+    fontSize: 18,
+    color: '#667eea',
+    marginHorizontal: 12,
+  },
+  translationContent: {
+    marginBottom: 16,
+  },
+  sourceText: {
+    fontSize: 18,
+    color: '#333',
+    fontWeight: '600' as const,
+    marginBottom: 12,
+  },
+  divider: {
+    height: 1,
+    backgroundColor: 'rgba(102, 126, 234, 0.2)',
+    marginVertical: 12,
+  },
+  translatedText: {
+    fontSize: 18,
+    color: '#667eea',
+    fontWeight: '500' as const,
+  },
+  rtlText: {
+    textAlign: 'right' as const,
+  },
+  footer: {
+    flexDirection: 'row' as const,
+    justifyContent: 'space-between' as const,
+    alignItems: 'center' as const,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(0, 0, 0, 0.05)',
+    paddingTop: 12,
+  },
+  timestamp: {
+    fontSize: 12,
+    color: '#999',
+    fontWeight: '400' as const,
+  },
+  deleteButton: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: 'rgba(229, 57, 53, 0.1)',
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  },
+  deleteIcon: {
+    fontSize: 14,
+    color: '#E53935',
+  },
+  emptyContainer: {
+    flex: 1,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+    paddingHorizontal: 40,
+  },
+  emptyIcon: {
+    fontSize: 80,
+    marginBottom: 24,
+    opacity: 0.6,
+  },
+  emptyTitle: {
+    fontSize: 24,
+    fontWeight: '700' as const,
+    color: 'rgba(255, 255, 255, 0.9)',
+    marginBottom: 12,
+    textAlign: 'center' as const,
+  },
+  emptyText: {
+    fontSize: 16,
+    color: 'rgba(255, 255, 255, 0.7)',
+    textAlign: 'center' as const,
+    lineHeight: 24,
+  },
+};
 
 export default function HistoryScreen() {
   const { history, clearHistory, removeFromHistory } = useApp();
@@ -55,46 +235,46 @@ export default function HistoryScreen() {
     const targetInfo = getLanguageInfo(item.targetLang);
 
     return (
-      <View style={styles.historyItem}>
-        <View style={styles.langRow}>
-          <View style={styles.langBadge}>
-            <Text style={styles.langFlag}>{sourceInfo.flag}</Text>
-            <Text style={styles.langCode}>{sourceInfo.nativeName}</Text>
+      <View style={inlineStyles.historyCard}>
+        <View style={inlineStyles.langRow}>
+          <View style={inlineStyles.langBadge}>
+            <Text style={inlineStyles.langFlag}>{sourceInfo.flag}</Text>
+            <Text style={inlineStyles.langCode}>{sourceInfo.nativeName}</Text>
           </View>
-          <Text style={styles.arrow}>→</Text>
-          <View style={styles.langBadge}>
-            <Text style={styles.langFlag}>{targetInfo.flag}</Text>
-            <Text style={styles.langCode}>{targetInfo.nativeName}</Text>
+          <Text style={inlineStyles.arrow}>→</Text>
+          <View style={inlineStyles.langBadge}>
+            <Text style={inlineStyles.langFlag}>{targetInfo.flag}</Text>
+            <Text style={inlineStyles.langCode}>{targetInfo.nativeName}</Text>
           </View>
         </View>
 
-        <View style={styles.translationContent}>
+        <View style={inlineStyles.translationContent}>
           <Text
             style={[
-              styles.sourceText,
-              sourceInfo.direction === 'rtl' && styles.rtlText
+              inlineStyles.sourceText,
+              sourceInfo.direction === 'rtl' && inlineStyles.rtlText
             ]}
           >
             {item.sourceText}
           </Text>
-          <View style={styles.divider} />
+          <View style={inlineStyles.divider} />
           <Text
             style={[
-              styles.translatedText,
-              targetInfo.direction === 'rtl' && styles.rtlText
+              inlineStyles.translatedText,
+              targetInfo.direction === 'rtl' && inlineStyles.rtlText
             ]}
           >
             {item.translatedText}
           </Text>
         </View>
 
-        <View style={styles.footer}>
-          <Text style={styles.timestamp}>{formatDate(item.timestamp)}</Text>
+        <View style={inlineStyles.footer}>
+          <Text style={inlineStyles.timestamp}>{formatDate(item.timestamp)}</Text>
           <TouchableOpacity
-            style={styles.deleteButton}
+            style={inlineStyles.deleteButton}
             onPress={() => removeFromHistory(item.id)}
           >
-            <Text style={styles.deleteIcon}>✕</Text>
+            <Text style={inlineStyles.deleteIcon}>✕</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -102,180 +282,57 @@ export default function HistoryScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container} edges={['top']}>
-      {/* Header */}
-      <View style={styles.header}>
-        <Text style={styles.headerSymbol}>{AMAZIGH_SYMBOL}</Text>
-        <View style={styles.headerText}>
-          <Text style={styles.headerTitle}>Amezruy</Text>
-          <Text style={styles.headerSubtitle}>Historique</Text>
-        </View>
-        {history.length > 0 && (
-          <TouchableOpacity
-            style={styles.clearButton}
-            onPress={handleClearHistory}
-          >
-            <Text style={styles.clearButtonText}>Effacer</Text>
-          </TouchableOpacity>
-        )}
-      </View>
+    <View style={inlineStyles.container}>
+      <LinearGradient
+        colors={['#667eea', '#764ba2', '#f093fb']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={inlineStyles.gradientBackground}
+      >
+        <SafeAreaView style={{ flex: 1 }} edges={['top']}>
+          {/* Header */}
+          <View style={inlineStyles.header}>
+            <View style={inlineStyles.headerRow}>
+              <View style={inlineStyles.headerLeft}>
+                <Text style={inlineStyles.amazighSymbol}>ⵣ</Text>
+                <View>
+                  <Text style={inlineStyles.headerTitle}>Amezruy</Text>
+                  <Text style={inlineStyles.headerSubtitle}>Historique</Text>
+                </View>
+              </View>
+              {history.length > 0 && (
+                <TouchableOpacity
+                  style={inlineStyles.clearButton}
+                  onPress={handleClearHistory}
+                  activeOpacity={0.8}
+                >
+                  <Text style={inlineStyles.clearButtonText}>Effacer</Text>
+                </TouchableOpacity>
+              )}
+            </View>
+          </View>
 
-      {/* Content */}
-      {history.length > 0 ? (
-        <FlatList
-          data={history}
-          keyExtractor={(item) => item.id}
-          renderItem={renderItem}
-          contentContainerStyle={styles.listContent}
-        />
-      ) : (
-        <View style={styles.emptyContainer}>
-          <Text style={styles.emptyIcon}>📜</Text>
-          <Text style={styles.emptyTitle}>Aucun historique</Text>
-          <Text style={styles.emptyText}>
-            Vos traductions apparaîtront ici
-          </Text>
-        </View>
-      )}
-    </SafeAreaView>
+          {/* Content */}
+          <View style={inlineStyles.contentContainer}>
+            {history.length > 0 ? (
+              <FlatList
+                data={history}
+                keyExtractor={(item) => item.id}
+                renderItem={renderItem}
+                contentContainerStyle={inlineStyles.listContent}
+              />
+            ) : (
+              <View style={inlineStyles.emptyContainer}>
+                <Text style={inlineStyles.emptyIcon}>📜</Text>
+                <Text style={inlineStyles.emptyTitle}>Aucun historique</Text>
+                <Text style={inlineStyles.emptyText}>
+                  Vos traductions apparaîtront ici
+                </Text>
+              </View>
+            )}
+          </View>
+        </SafeAreaView>
+      </LinearGradient>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.background
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: SPACING.md,
-    paddingHorizontal: SPACING.lg,
-    backgroundColor: COLORS.primaryDark
-  },
-  headerSymbol: {
-    fontSize: FONTS.sizes.xxxl,
-    color: COLORS.accent,
-    marginRight: SPACING.sm
-  },
-  headerText: {
-    flex: 1
-  },
-  headerTitle: {
-    fontSize: FONTS.sizes.xxl,
-    fontWeight: FONTS.weights.bold,
-    color: COLORS.textOnPrimary
-  },
-  headerSubtitle: {
-    fontSize: FONTS.sizes.md,
-    color: COLORS.textOnPrimary,
-    opacity: 0.8
-  },
-  clearButton: {
-    backgroundColor: COLORS.error + '30',
-    paddingHorizontal: SPACING.md,
-    paddingVertical: SPACING.sm,
-    borderRadius: BORDER_RADIUS.md
-  },
-  clearButtonText: {
-    color: COLORS.textOnPrimary,
-    fontWeight: FONTS.weights.semiBold
-  },
-  listContent: {
-    padding: SPACING.md,
-    paddingBottom: 100
-  },
-  historyItem: {
-    backgroundColor: COLORS.surface,
-    borderRadius: BORDER_RADIUS.lg,
-    padding: SPACING.lg,
-    marginBottom: SPACING.md,
-    ...SHADOWS.sm
-  },
-  langRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: SPACING.md
-  },
-  langBadge: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: COLORS.background,
-    paddingHorizontal: SPACING.sm,
-    paddingVertical: SPACING.xs,
-    borderRadius: BORDER_RADIUS.md
-  },
-  langFlag: {
-    fontSize: FONTS.sizes.lg,
-    marginRight: SPACING.xs
-  },
-  langCode: {
-    fontSize: FONTS.sizes.sm,
-    color: COLORS.textSecondary
-  },
-  arrow: {
-    fontSize: FONTS.sizes.lg,
-    color: COLORS.textLight,
-    marginHorizontal: SPACING.sm
-  },
-  translationContent: {
-    marginBottom: SPACING.md
-  },
-  sourceText: {
-    fontSize: FONTS.sizes.lg,
-    color: COLORS.text,
-    fontWeight: FONTS.weights.medium
-  },
-  divider: {
-    height: 1,
-    backgroundColor: COLORS.divider,
-    marginVertical: SPACING.sm
-  },
-  translatedText: {
-    fontSize: FONTS.sizes.lg,
-    color: COLORS.primary
-  },
-  rtlText: {
-    textAlign: 'right'
-  },
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    borderTopWidth: 1,
-    borderTopColor: COLORS.divider,
-    paddingTop: SPACING.sm
-  },
-  timestamp: {
-    fontSize: FONTS.sizes.sm,
-    color: COLORS.textLight
-  },
-  deleteButton: {
-    padding: SPACING.sm
-  },
-  deleteIcon: {
-    fontSize: FONTS.sizes.md,
-    color: COLORS.textLight
-  },
-  emptyContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: SPACING.xxxl
-  },
-  emptyIcon: {
-    fontSize: 64,
-    marginBottom: SPACING.lg
-  },
-  emptyTitle: {
-    fontSize: FONTS.sizes.xxl,
-    fontWeight: FONTS.weights.bold,
-    color: COLORS.textSecondary,
-    marginBottom: SPACING.sm
-  },
-  emptyText: {
-    fontSize: FONTS.sizes.lg,
-    color: COLORS.textLight,
-    textAlign: 'center'
-  }
-});

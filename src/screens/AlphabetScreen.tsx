@@ -2,19 +2,413 @@ import React, { useState } from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   FlatList,
   TouchableOpacity,
   Modal,
-  Dimensions
+  Dimensions,
+  Animated
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { COLORS, FONTS, SPACING, BORDER_RADIUS, SHADOWS, AMAZIGH_SYMBOL } from '../utils/theme';
+import { LinearGradient } from 'expo-linear-gradient';
 import { getTifinaghAlphabet } from '../services/translationService';
 import { TifinaghLetter } from '../types';
 
 const { width } = Dimensions.get('window');
-const CARD_SIZE = (width - SPACING.md * 4) / 3;
+const CARD_SIZE = (width - 64) / 3;
+
+// Inline styles matching the neumorphic/dark mode design from Image 1
+const inlineStyles = {
+  container: {
+    flex: 1,
+    backgroundColor: '#1a1a2e',
+  },
+  gradientBackground: {
+    flex: 1,
+  },
+  header: {
+    paddingTop: 20,
+    paddingHorizontal: 24,
+    paddingBottom: 20,
+  },
+  headerRow: {
+    flexDirection: 'row' as const,
+    alignItems: 'center' as const,
+    justifyContent: 'space-between' as const,
+  },
+  headerLeft: {
+    flexDirection: 'row' as const,
+    alignItems: 'center' as const,
+  },
+  amazighSymbol: {
+    fontSize: 36,
+    color: '#FFC107',
+    textShadowColor: 'rgba(255, 193, 7, 0.4)',
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 8,
+    marginRight: 12,
+  },
+  headerTitle: {
+    fontSize: 28,
+    fontWeight: '700' as const,
+    color: '#FFFFFF',
+    textShadowColor: 'rgba(0, 0, 0, 0.3)',
+    textShadowOffset: { width: 0, height: 1 },
+    textShadowRadius: 2,
+  },
+  headerSubtitle: {
+    fontSize: 14,
+    color: 'rgba(255, 255, 255, 0.7)',
+    marginTop: 2,
+  },
+  quizButton: {
+    backgroundColor: '#FFC107',
+    paddingHorizontal: 20,
+    paddingVertical: 12,
+    borderRadius: 16,
+    shadowColor: '#FFC107',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+    elevation: 6,
+  },
+  quizButtonText: {
+    color: '#1a1a2e',
+    fontWeight: '700' as const,
+    fontSize: 14,
+  },
+  introContainer: {
+    marginHorizontal: 24,
+    marginBottom: 20,
+    padding: 20,
+    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+  },
+  introText: {
+    fontSize: 14,
+    color: 'rgba(255, 255, 255, 0.8)',
+    lineHeight: 22,
+    textAlign: 'center' as const,
+  },
+  gridContent: {
+    paddingHorizontal: 16,
+    paddingBottom: 120,
+  },
+  gridRow: {
+    justifyContent: 'space-between' as const,
+  },
+  letterCard: {
+    width: CARD_SIZE,
+    height: CARD_SIZE,
+    backgroundColor: 'rgba(255, 255, 255, 0.06)',
+    borderRadius: 20,
+    marginBottom: 16,
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+    // Neumorphic shadow effect
+    shadowColor: '#000',
+    shadowOffset: { width: 4, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 8,
+    elevation: 8,
+  },
+  letterCardPressed: {
+    backgroundColor: 'rgba(255, 193, 7, 0.15)',
+    borderColor: 'rgba(255, 193, 7, 0.3)',
+    transform: [{ scale: 0.95 }],
+  },
+  tifinaghChar: {
+    fontSize: 36,
+    color: '#FFC107',
+    fontWeight: '700' as const,
+    textShadowColor: 'rgba(255, 193, 7, 0.4)',
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 4,
+  },
+  latinChar: {
+    fontSize: 14,
+    color: 'rgba(255, 255, 255, 0.6)',
+    marginTop: 8,
+    fontWeight: '500' as const,
+  },
+  // Modal styles
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    justifyContent: 'center' as const,
+    alignItems: 'center' as const,
+    padding: 24,
+  },
+  modalContent: {
+    backgroundColor: '#1e1e3f',
+    borderRadius: 28,
+    padding: 32,
+    alignItems: 'center' as const,
+    width: '100%',
+    maxWidth: 320,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 12 },
+    shadowOpacity: 0.5,
+    shadowRadius: 24,
+    elevation: 20,
+  },
+  modalTifinagh: {
+    fontSize: 80,
+    color: '#FFC107',
+    fontWeight: '700' as const,
+    textShadowColor: 'rgba(255, 193, 7, 0.5)',
+    textShadowOffset: { width: 0, height: 4 },
+    textShadowRadius: 12,
+  },
+  modalLatin: {
+    fontSize: 32,
+    color: 'rgba(255, 255, 255, 0.8)',
+    marginTop: 8,
+    fontWeight: '600' as const,
+  },
+  modalDivider: {
+    height: 1,
+    backgroundColor: 'rgba(255, 255, 255, 0.15)',
+    width: '100%',
+    marginVertical: 24,
+  },
+  modalInfo: {
+    flexDirection: 'row' as const,
+    marginBottom: 12,
+    alignItems: 'center' as const,
+  },
+  modalLabel: {
+    fontSize: 14,
+    color: 'rgba(255, 255, 255, 0.5)',
+    marginRight: 8,
+    width: 100,
+  },
+  modalValue: {
+    fontSize: 16,
+    color: '#FFFFFF',
+    fontWeight: '500' as const,
+  },
+  modalClose: {
+    marginTop: 24,
+    backgroundColor: 'rgba(255, 193, 7, 0.2)',
+    paddingHorizontal: 32,
+    paddingVertical: 14,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 193, 7, 0.3)',
+  },
+  modalCloseText: {
+    color: '#FFC107',
+    fontWeight: '600' as const,
+    fontSize: 16,
+  },
+  // Quiz styles
+  quizOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.9)',
+    justifyContent: 'center' as const,
+    padding: 20,
+  },
+  quizContent: {
+    backgroundColor: '#1e1e3f',
+    borderRadius: 28,
+    overflow: 'hidden' as const,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+  },
+  quizHeader: {
+    flexDirection: 'row' as const,
+    alignItems: 'center' as const,
+    backgroundColor: 'rgba(255, 193, 7, 0.15)',
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(255, 255, 255, 0.1)',
+  },
+  quizTitle: {
+    flex: 1,
+    fontSize: 20,
+    fontWeight: '700' as const,
+    color: '#FFC107',
+  },
+  quizProgress: {
+    fontSize: 14,
+    color: 'rgba(255, 255, 255, 0.6)',
+    marginRight: 16,
+  },
+  quizCloseButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 18,
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+  },
+  quizCloseText: {
+    fontSize: 20,
+    color: 'rgba(255, 255, 255, 0.8)',
+  },
+  quizBody: {
+    padding: 32,
+    alignItems: 'center' as const,
+  },
+  quizQuestion: {
+    fontSize: 16,
+    color: 'rgba(255, 255, 255, 0.7)',
+    textAlign: 'center' as const,
+    marginBottom: 24,
+  },
+  quizLetter: {
+    fontSize: 100,
+    color: '#FFC107',
+    fontWeight: '700' as const,
+    marginBottom: 32,
+    textShadowColor: 'rgba(255, 193, 7, 0.5)',
+    textShadowOffset: { width: 0, height: 4 },
+    textShadowRadius: 16,
+  },
+  revealButton: {
+    backgroundColor: 'rgba(102, 126, 234, 0.2)',
+    paddingHorizontal: 40,
+    paddingVertical: 16,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: 'rgba(102, 126, 234, 0.4)',
+  },
+  revealButtonText: {
+    color: '#667eea',
+    fontSize: 16,
+    fontWeight: '600' as const,
+  },
+  answerSection: {
+    alignItems: 'center' as const,
+  },
+  answerText: {
+    fontSize: 28,
+    color: '#43A047',
+    fontWeight: '700' as const,
+  },
+  phoneticAnswer: {
+    fontSize: 18,
+    color: 'rgba(255, 255, 255, 0.6)',
+    fontStyle: 'italic' as const,
+    marginTop: 8,
+  },
+  selfEvalLabel: {
+    fontSize: 14,
+    color: 'rgba(255, 255, 255, 0.6)',
+    marginTop: 32,
+    marginBottom: 16,
+  },
+  evalButtons: {
+    flexDirection: 'row' as const,
+    gap: 16,
+  },
+  evalButton: {
+    paddingHorizontal: 32,
+    paddingVertical: 14,
+    borderRadius: 16,
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.4,
+    shadowRadius: 8,
+    elevation: 6,
+  },
+  wrongButton: {
+    backgroundColor: '#E53935',
+    shadowColor: '#E53935',
+  },
+  correctButton: {
+    backgroundColor: '#43A047',
+    shadowColor: '#43A047',
+  },
+  evalButtonText: {
+    color: '#FFFFFF',
+    fontSize: 16,
+    fontWeight: '600' as const,
+  },
+  scoreContainer: {
+    marginTop: 32,
+    paddingTop: 24,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(255, 255, 255, 0.1)',
+    width: '100%',
+    alignItems: 'center' as const,
+  },
+  scoreText: {
+    fontSize: 18,
+    color: 'rgba(255, 255, 255, 0.7)',
+    fontWeight: '500' as const,
+  },
+  // Result modal
+  resultOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.85)',
+    justifyContent: 'center' as const,
+    alignItems: 'center' as const,
+    padding: 24,
+  },
+  resultContent: {
+    backgroundColor: '#1e1e3f',
+    borderRadius: 32,
+    padding: 40,
+    alignItems: 'center' as const,
+    width: '100%',
+    maxWidth: 340,
+    borderWidth: 1,
+    borderColor: 'rgba(255, 255, 255, 0.1)',
+    shadowColor: '#FFC107',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.3,
+    shadowRadius: 24,
+    elevation: 16,
+  },
+  resultEmoji: {
+    fontSize: 72,
+    marginBottom: 24,
+  },
+  resultTitle: {
+    fontSize: 28,
+    fontWeight: '700' as const,
+    color: '#FFFFFF',
+    marginBottom: 12,
+  },
+  resultScore: {
+    fontSize: 48,
+    fontWeight: '800' as const,
+    color: '#FFC107',
+    marginBottom: 16,
+    textShadowColor: 'rgba(255, 193, 7, 0.4)',
+    textShadowOffset: { width: 0, height: 2 },
+    textShadowRadius: 8,
+  },
+  resultMessage: {
+    fontSize: 16,
+    color: 'rgba(255, 255, 255, 0.7)',
+    textAlign: 'center' as const,
+    marginBottom: 32,
+    lineHeight: 24,
+  },
+  restartButton: {
+    backgroundColor: '#FFC107',
+    paddingHorizontal: 40,
+    paddingVertical: 16,
+    borderRadius: 20,
+    shadowColor: '#FFC107',
+    shadowOffset: { width: 0, height: 6 },
+    shadowOpacity: 0.4,
+    shadowRadius: 12,
+    elevation: 8,
+  },
+  restartButtonText: {
+    color: '#1a1a2e',
+    fontSize: 18,
+    fontWeight: '700' as const,
+  },
+};
 
 export default function AlphabetScreen() {
   const [selectedLetter, setSelectedLetter] = useState<TifinaghLetter | null>(null);
@@ -45,502 +439,219 @@ export default function AlphabetScreen() {
       setQuizIndex(quizIndex + 1);
       setShowAnswer(false);
     } else {
-      // Quiz finished
       setQuizMode(false);
     }
   };
 
   const renderLetter = ({ item }: { item: TifinaghLetter }) => (
     <TouchableOpacity
-      style={styles.letterCard}
+      style={inlineStyles.letterCard}
       onPress={() => handleLetterPress(item)}
       activeOpacity={0.7}
     >
-      <Text style={styles.tifinaghChar}>{item.char}</Text>
-      <Text style={styles.latinChar}>{item.latin}</Text>
+      <Text style={inlineStyles.tifinaghChar}>{item.char}</Text>
+      <Text style={inlineStyles.latinChar}>{item.latin}</Text>
     </TouchableOpacity>
   );
 
   return (
-    <SafeAreaView style={styles.container} edges={['top']}>
-      {/* Header */}
-      <View style={styles.header}>
-        <Text style={styles.headerSymbol}>{AMAZIGH_SYMBOL}</Text>
-        <View style={styles.headerText}>
-          <Text style={styles.headerTitle}>Tifinagh</Text>
-          <Text style={styles.headerSubtitle}>Agemmay - Alphabet</Text>
-        </View>
-        <TouchableOpacity style={styles.quizButton} onPress={startQuiz}>
-          <Text style={styles.quizButtonText}>Quiz</Text>
-        </TouchableOpacity>
-      </View>
-
-      {/* Introduction */}
-      <View style={styles.intro}>
-        <Text style={styles.introText}>
-          L'alphabet Tifinagh est l'écriture traditionnelle des Berbères.
-          Appuyez sur une lettre pour voir les détails.
-        </Text>
-      </View>
-
-      {/* Alphabet Grid */}
-      <FlatList
-        data={alphabet}
-        keyExtractor={(item) => item.char}
-        renderItem={renderLetter}
-        numColumns={3}
-        contentContainerStyle={styles.gridContent}
-        columnWrapperStyle={styles.gridRow}
-      />
-
-      {/* Letter Detail Modal */}
-      <Modal
-        visible={!!selectedLetter}
-        transparent
-        animationType="fade"
-        onRequestClose={() => setSelectedLetter(null)}
+    <View style={inlineStyles.container}>
+      <LinearGradient
+        colors={['#1a1a2e', '#16213e', '#0f0f23']}
+        start={{ x: 0, y: 0 }}
+        end={{ x: 1, y: 1 }}
+        style={inlineStyles.gradientBackground}
       >
-        <TouchableOpacity
-          style={styles.modalOverlay}
-          activeOpacity={1}
-          onPress={() => setSelectedLetter(null)}
-        >
-          <View style={styles.modalContent}>
-            {selectedLetter && (
-              <>
-                <Text style={styles.modalTifinagh}>{selectedLetter.char}</Text>
-                <Text style={styles.modalLatin}>{selectedLetter.latin}</Text>
-                <View style={styles.modalDivider} />
-                <View style={styles.modalInfo}>
-                  <Text style={styles.modalLabel}>Nom:</Text>
-                  <Text style={styles.modalValue}>{selectedLetter.name}</Text>
+        <SafeAreaView style={{ flex: 1 }} edges={['top']}>
+          {/* Header */}
+          <View style={inlineStyles.header}>
+            <View style={inlineStyles.headerRow}>
+              <View style={inlineStyles.headerLeft}>
+                <Text style={inlineStyles.amazighSymbol}>ⵣ</Text>
+                <View>
+                  <Text style={inlineStyles.headerTitle}>Tifinagh</Text>
+                  <Text style={inlineStyles.headerSubtitle}>Agemmay - Alphabet</Text>
                 </View>
-                <View style={styles.modalInfo}>
-                  <Text style={styles.modalLabel}>Prononciation:</Text>
-                  <Text style={styles.modalValue}>/{selectedLetter.phonetic}/</Text>
-                </View>
-                <TouchableOpacity
-                  style={styles.modalClose}
-                  onPress={() => setSelectedLetter(null)}
-                >
-                  <Text style={styles.modalCloseText}>Fermer</Text>
-                </TouchableOpacity>
-              </>
-            )}
-          </View>
-        </TouchableOpacity>
-      </Modal>
-
-      {/* Quiz Modal */}
-      <Modal
-        visible={quizMode}
-        transparent
-        animationType="slide"
-        onRequestClose={() => setQuizMode(false)}
-      >
-        <View style={styles.quizOverlay}>
-          <View style={styles.quizContent}>
-            <View style={styles.quizHeader}>
-              <Text style={styles.quizTitle}>Quiz Tifinagh</Text>
-              <Text style={styles.quizProgress}>
-                {quizIndex + 1} / {alphabet.length}
-              </Text>
+              </View>
               <TouchableOpacity
-                style={styles.quizCloseButton}
-                onPress={() => setQuizMode(false)}
+                style={inlineStyles.quizButton}
+                onPress={startQuiz}
+                activeOpacity={0.8}
               >
-                <Text style={styles.quizCloseText}>✕</Text>
+                <Text style={inlineStyles.quizButtonText}>Quiz</Text>
               </TouchableOpacity>
             </View>
+          </View>
 
-            <View style={styles.quizBody}>
-              <Text style={styles.quizQuestion}>
-                Quelle est la transcription latine de cette lettre?
-              </Text>
-              <Text style={styles.quizLetter}>{alphabet[quizIndex].char}</Text>
+          {/* Introduction */}
+          <View style={inlineStyles.introContainer}>
+            <Text style={inlineStyles.introText}>
+              L'alphabet Tifinagh est l'écriture traditionnelle des Berbères.
+              Appuyez sur une lettre pour voir les détails.
+            </Text>
+          </View>
 
-              {!showAnswer ? (
-                <TouchableOpacity
-                  style={styles.revealButton}
-                  onPress={() => setShowAnswer(true)}
-                >
-                  <Text style={styles.revealButtonText}>Voir la réponse</Text>
-                </TouchableOpacity>
-              ) : (
-                <View style={styles.answerSection}>
-                  <Text style={styles.answerText}>
-                    {alphabet[quizIndex].latin} - {alphabet[quizIndex].name}
-                  </Text>
-                  <Text style={styles.phoneticAnswer}>
-                    /{alphabet[quizIndex].phonetic}/
-                  </Text>
+          {/* Alphabet Grid */}
+          <FlatList
+            data={alphabet}
+            keyExtractor={(item) => item.char}
+            renderItem={renderLetter}
+            numColumns={3}
+            contentContainerStyle={inlineStyles.gridContent}
+            columnWrapperStyle={inlineStyles.gridRow}
+          />
 
-                  <Text style={styles.selfEvalLabel}>Vous avez trouvé?</Text>
-                  <View style={styles.evalButtons}>
+          {/* Letter Detail Modal */}
+          <Modal
+            visible={!!selectedLetter}
+            transparent
+            animationType="fade"
+            onRequestClose={() => setSelectedLetter(null)}
+          >
+            <TouchableOpacity
+              style={inlineStyles.modalOverlay}
+              activeOpacity={1}
+              onPress={() => setSelectedLetter(null)}
+            >
+              <View style={inlineStyles.modalContent}>
+                {selectedLetter && (
+                  <>
+                    <Text style={inlineStyles.modalTifinagh}>{selectedLetter.char}</Text>
+                    <Text style={inlineStyles.modalLatin}>{selectedLetter.latin}</Text>
+                    <View style={inlineStyles.modalDivider} />
+                    <View style={inlineStyles.modalInfo}>
+                      <Text style={inlineStyles.modalLabel}>Nom:</Text>
+                      <Text style={inlineStyles.modalValue}>{selectedLetter.name}</Text>
+                    </View>
+                    <View style={inlineStyles.modalInfo}>
+                      <Text style={inlineStyles.modalLabel}>Prononciation:</Text>
+                      <Text style={inlineStyles.modalValue}>/{selectedLetter.phonetic}/</Text>
+                    </View>
                     <TouchableOpacity
-                      style={[styles.evalButton, styles.wrongButton]}
-                      onPress={() => nextQuizQuestion(false)}
+                      style={inlineStyles.modalClose}
+                      onPress={() => setSelectedLetter(null)}
                     >
-                      <Text style={styles.evalButtonText}>Non ✗</Text>
+                      <Text style={inlineStyles.modalCloseText}>Fermer</Text>
                     </TouchableOpacity>
+                  </>
+                )}
+              </View>
+            </TouchableOpacity>
+          </Modal>
+
+          {/* Quiz Modal */}
+          <Modal
+            visible={quizMode}
+            transparent
+            animationType="slide"
+            onRequestClose={() => setQuizMode(false)}
+          >
+            <View style={inlineStyles.quizOverlay}>
+              <View style={inlineStyles.quizContent}>
+                <View style={inlineStyles.quizHeader}>
+                  <Text style={inlineStyles.quizTitle}>Quiz Tifinagh</Text>
+                  <Text style={inlineStyles.quizProgress}>
+                    {quizIndex + 1} / {alphabet.length}
+                  </Text>
+                  <TouchableOpacity
+                    style={inlineStyles.quizCloseButton}
+                    onPress={() => setQuizMode(false)}
+                  >
+                    <Text style={inlineStyles.quizCloseText}>✕</Text>
+                  </TouchableOpacity>
+                </View>
+
+                <View style={inlineStyles.quizBody}>
+                  <Text style={inlineStyles.quizQuestion}>
+                    Quelle est la transcription latine de cette lettre?
+                  </Text>
+                  <Text style={inlineStyles.quizLetter}>{alphabet[quizIndex].char}</Text>
+
+                  {!showAnswer ? (
                     <TouchableOpacity
-                      style={[styles.evalButton, styles.correctButton]}
-                      onPress={() => nextQuizQuestion(true)}
+                      style={inlineStyles.revealButton}
+                      onPress={() => setShowAnswer(true)}
                     >
-                      <Text style={styles.evalButtonText}>Oui ✓</Text>
+                      <Text style={inlineStyles.revealButtonText}>Voir la réponse</Text>
                     </TouchableOpacity>
+                  ) : (
+                    <View style={inlineStyles.answerSection}>
+                      <Text style={inlineStyles.answerText}>
+                        {alphabet[quizIndex].latin} - {alphabet[quizIndex].name}
+                      </Text>
+                      <Text style={inlineStyles.phoneticAnswer}>
+                        /{alphabet[quizIndex].phonetic}/
+                      </Text>
+
+                      <Text style={inlineStyles.selfEvalLabel}>Vous avez trouvé?</Text>
+                      <View style={inlineStyles.evalButtons}>
+                        <TouchableOpacity
+                          style={[inlineStyles.evalButton, inlineStyles.wrongButton]}
+                          onPress={() => nextQuizQuestion(false)}
+                        >
+                          <Text style={inlineStyles.evalButtonText}>Non ✗</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity
+                          style={[inlineStyles.evalButton, inlineStyles.correctButton]}
+                          onPress={() => nextQuizQuestion(true)}
+                        >
+                          <Text style={inlineStyles.evalButtonText}>Oui ✓</Text>
+                        </TouchableOpacity>
+                      </View>
+                    </View>
+                  )}
+
+                  <View style={inlineStyles.scoreContainer}>
+                    <Text style={inlineStyles.scoreText}>Score: {score}</Text>
                   </View>
                 </View>
-              )}
-
-              <View style={styles.scoreContainer}>
-                <Text style={styles.scoreText}>Score: {score}</Text>
               </View>
             </View>
-          </View>
-        </View>
-      </Modal>
+          </Modal>
 
-      {/* Quiz Result Modal */}
-      {!quizMode && score > 0 && (
-        <Modal
-          visible={true}
-          transparent
-          animationType="fade"
-          onRequestClose={() => setScore(0)}
-        >
-          <TouchableOpacity
-            style={styles.resultOverlay}
-            activeOpacity={1}
-            onPress={() => setScore(0)}
-          >
-            <View style={styles.resultContent}>
-              <Text style={styles.resultEmoji}>
-                {score >= alphabet.length * 0.8 ? '🎉' : score >= alphabet.length * 0.5 ? '👍' : '💪'}
-              </Text>
-              <Text style={styles.resultTitle}>Quiz terminé!</Text>
-              <Text style={styles.resultScore}>
-                {score} / {alphabet.length}
-              </Text>
-              <Text style={styles.resultMessage}>
-                {score >= alphabet.length * 0.8
-                  ? 'Excellent! Tu maîtrises le Tifinagh!'
-                  : score >= alphabet.length * 0.5
-                  ? 'Bien joué! Continue à pratiquer!'
-                  : 'Continue à apprendre, tu vas y arriver!'}
-              </Text>
+          {/* Quiz Result Modal */}
+          {!quizMode && score > 0 && (
+            <Modal
+              visible={true}
+              transparent
+              animationType="fade"
+              onRequestClose={() => setScore(0)}
+            >
               <TouchableOpacity
-                style={styles.restartButton}
-                onPress={() => {
-                  setScore(0);
-                  startQuiz();
-                }}
+                style={inlineStyles.resultOverlay}
+                activeOpacity={1}
+                onPress={() => setScore(0)}
               >
-                <Text style={styles.restartButtonText}>Recommencer</Text>
+                <View style={inlineStyles.resultContent}>
+                  <Text style={inlineStyles.resultEmoji}>
+                    {score >= alphabet.length * 0.8 ? '🎉' : score >= alphabet.length * 0.5 ? '👍' : '💪'}
+                  </Text>
+                  <Text style={inlineStyles.resultTitle}>Quiz terminé!</Text>
+                  <Text style={inlineStyles.resultScore}>
+                    {score} / {alphabet.length}
+                  </Text>
+                  <Text style={inlineStyles.resultMessage}>
+                    {score >= alphabet.length * 0.8
+                      ? 'Excellent! Tu maîtrises le Tifinagh!'
+                      : score >= alphabet.length * 0.5
+                      ? 'Bien joué! Continue à pratiquer!'
+                      : 'Continue à apprendre, tu vas y arriver!'}
+                  </Text>
+                  <TouchableOpacity
+                    style={inlineStyles.restartButton}
+                    onPress={() => {
+                      setScore(0);
+                      startQuiz();
+                    }}
+                  >
+                    <Text style={inlineStyles.restartButtonText}>Recommencer</Text>
+                  </TouchableOpacity>
+                </View>
               </TouchableOpacity>
-            </View>
-          </TouchableOpacity>
-        </Modal>
-      )}
-    </SafeAreaView>
+            </Modal>
+          )}
+        </SafeAreaView>
+      </LinearGradient>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: COLORS.background
-  },
-  header: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: SPACING.md,
-    paddingHorizontal: SPACING.lg,
-    backgroundColor: COLORS.tifinagh
-  },
-  headerSymbol: {
-    fontSize: FONTS.sizes.xxxl,
-    color: COLORS.accent,
-    marginRight: SPACING.sm
-  },
-  headerText: {
-    flex: 1
-  },
-  headerTitle: {
-    fontSize: FONTS.sizes.xxl,
-    fontWeight: FONTS.weights.bold,
-    color: COLORS.textOnPrimary
-  },
-  headerSubtitle: {
-    fontSize: FONTS.sizes.md,
-    color: COLORS.textOnPrimary,
-    opacity: 0.8
-  },
-  quizButton: {
-    backgroundColor: COLORS.accent,
-    paddingHorizontal: SPACING.lg,
-    paddingVertical: SPACING.sm,
-    borderRadius: BORDER_RADIUS.md
-  },
-  quizButtonText: {
-    color: COLORS.text,
-    fontWeight: FONTS.weights.bold
-  },
-  intro: {
-    padding: SPACING.lg,
-    backgroundColor: COLORS.surface,
-    margin: SPACING.md,
-    borderRadius: BORDER_RADIUS.lg,
-    ...SHADOWS.sm
-  },
-  introText: {
-    fontSize: FONTS.sizes.md,
-    color: COLORS.textSecondary,
-    lineHeight: 22
-  },
-  gridContent: {
-    padding: SPACING.md,
-    paddingBottom: 100
-  },
-  gridRow: {
-    justifyContent: 'space-between'
-  },
-  letterCard: {
-    width: CARD_SIZE,
-    height: CARD_SIZE,
-    backgroundColor: COLORS.surface,
-    borderRadius: BORDER_RADIUS.lg,
-    marginBottom: SPACING.md,
-    alignItems: 'center',
-    justifyContent: 'center',
-    ...SHADOWS.sm
-  },
-  tifinaghChar: {
-    fontSize: FONTS.sizes.huge,
-    color: COLORS.primary,
-    fontWeight: FONTS.weights.bold
-  },
-  latinChar: {
-    fontSize: FONTS.sizes.lg,
-    color: COLORS.textSecondary,
-    marginTop: SPACING.xs
-  },
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: SPACING.xl
-  },
-  modalContent: {
-    backgroundColor: COLORS.surface,
-    borderRadius: BORDER_RADIUS.xl,
-    padding: SPACING.xxl,
-    alignItems: 'center',
-    width: '100%',
-    maxWidth: 300
-  },
-  modalTifinagh: {
-    fontSize: 72,
-    color: COLORS.primary,
-    fontWeight: FONTS.weights.bold
-  },
-  modalLatin: {
-    fontSize: FONTS.sizes.xxxl,
-    color: COLORS.textSecondary,
-    marginTop: SPACING.sm
-  },
-  modalDivider: {
-    height: 1,
-    backgroundColor: COLORS.divider,
-    width: '100%',
-    marginVertical: SPACING.lg
-  },
-  modalInfo: {
-    flexDirection: 'row',
-    marginBottom: SPACING.sm
-  },
-  modalLabel: {
-    fontSize: FONTS.sizes.md,
-    color: COLORS.textSecondary,
-    marginRight: SPACING.sm
-  },
-  modalValue: {
-    fontSize: FONTS.sizes.md,
-    color: COLORS.text,
-    fontWeight: FONTS.weights.medium
-  },
-  modalClose: {
-    marginTop: SPACING.lg,
-    backgroundColor: COLORS.primary,
-    paddingHorizontal: SPACING.xl,
-    paddingVertical: SPACING.md,
-    borderRadius: BORDER_RADIUS.md
-  },
-  modalCloseText: {
-    color: COLORS.textOnPrimary,
-    fontWeight: FONTS.weights.semiBold
-  },
-  quizOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    justifyContent: 'center',
-    padding: SPACING.lg
-  },
-  quizContent: {
-    backgroundColor: COLORS.surface,
-    borderRadius: BORDER_RADIUS.xl,
-    overflow: 'hidden'
-  },
-  quizHeader: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: COLORS.primary,
-    padding: SPACING.lg
-  },
-  quizTitle: {
-    flex: 1,
-    fontSize: FONTS.sizes.xl,
-    fontWeight: FONTS.weights.bold,
-    color: COLORS.textOnPrimary
-  },
-  quizProgress: {
-    fontSize: FONTS.sizes.md,
-    color: COLORS.textOnPrimary,
-    opacity: 0.8,
-    marginRight: SPACING.md
-  },
-  quizCloseButton: {
-    padding: SPACING.sm
-  },
-  quizCloseText: {
-    fontSize: FONTS.sizes.xl,
-    color: COLORS.textOnPrimary
-  },
-  quizBody: {
-    padding: SPACING.xl,
-    alignItems: 'center'
-  },
-  quizQuestion: {
-    fontSize: FONTS.sizes.lg,
-    color: COLORS.textSecondary,
-    textAlign: 'center',
-    marginBottom: SPACING.xl
-  },
-  quizLetter: {
-    fontSize: 100,
-    color: COLORS.primary,
-    fontWeight: FONTS.weights.bold,
-    marginBottom: SPACING.xl
-  },
-  revealButton: {
-    backgroundColor: COLORS.secondary,
-    paddingHorizontal: SPACING.xxl,
-    paddingVertical: SPACING.md,
-    borderRadius: BORDER_RADIUS.lg
-  },
-  revealButtonText: {
-    color: COLORS.textOnPrimary,
-    fontSize: FONTS.sizes.lg,
-    fontWeight: FONTS.weights.semiBold
-  },
-  answerSection: {
-    alignItems: 'center'
-  },
-  answerText: {
-    fontSize: FONTS.sizes.xxl,
-    color: COLORS.secondary,
-    fontWeight: FONTS.weights.bold
-  },
-  phoneticAnswer: {
-    fontSize: FONTS.sizes.lg,
-    color: COLORS.textSecondary,
-    fontStyle: 'italic',
-    marginTop: SPACING.xs
-  },
-  selfEvalLabel: {
-    fontSize: FONTS.sizes.md,
-    color: COLORS.textSecondary,
-    marginTop: SPACING.xl,
-    marginBottom: SPACING.md
-  },
-  evalButtons: {
-    flexDirection: 'row',
-    gap: SPACING.md
-  },
-  evalButton: {
-    paddingHorizontal: SPACING.xxl,
-    paddingVertical: SPACING.md,
-    borderRadius: BORDER_RADIUS.lg
-  },
-  wrongButton: {
-    backgroundColor: COLORS.error
-  },
-  correctButton: {
-    backgroundColor: COLORS.success
-  },
-  evalButtonText: {
-    color: COLORS.textOnPrimary,
-    fontSize: FONTS.sizes.lg,
-    fontWeight: FONTS.weights.semiBold
-  },
-  scoreContainer: {
-    marginTop: SPACING.xl,
-    paddingTop: SPACING.lg,
-    borderTopWidth: 1,
-    borderTopColor: COLORS.divider
-  },
-  scoreText: {
-    fontSize: FONTS.sizes.lg,
-    color: COLORS.textSecondary,
-    fontWeight: FONTS.weights.medium
-  },
-  resultOverlay: {
-    flex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: SPACING.xl
-  },
-  resultContent: {
-    backgroundColor: COLORS.surface,
-    borderRadius: BORDER_RADIUS.xl,
-    padding: SPACING.xxl,
-    alignItems: 'center',
-    width: '100%',
-    maxWidth: 320
-  },
-  resultEmoji: {
-    fontSize: 64,
-    marginBottom: SPACING.lg
-  },
-  resultTitle: {
-    fontSize: FONTS.sizes.xxl,
-    fontWeight: FONTS.weights.bold,
-    color: COLORS.text,
-    marginBottom: SPACING.md
-  },
-  resultScore: {
-    fontSize: FONTS.sizes.huge,
-    fontWeight: FONTS.weights.bold,
-    color: COLORS.primary,
-    marginBottom: SPACING.md
-  },
-  resultMessage: {
-    fontSize: FONTS.sizes.lg,
-    color: COLORS.textSecondary,
-    textAlign: 'center',
-    marginBottom: SPACING.xl
-  },
-  restartButton: {
-    backgroundColor: COLORS.primary,
-    paddingHorizontal: SPACING.xxl,
-    paddingVertical: SPACING.md,
-    borderRadius: BORDER_RADIUS.lg
-  },
-  restartButtonText: {
-    color: COLORS.textOnPrimary,
-    fontSize: FONTS.sizes.lg,
-    fontWeight: FONTS.weights.semiBold
-  }
-});

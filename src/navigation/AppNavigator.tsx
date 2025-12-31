@@ -1,7 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, Text, StyleSheet } from 'react-native';
-import { COLORS, FONTS, SPACING } from '../utils/theme';
+import { View, Text } from 'react-native';
 
 import TranslateScreen from '../screens/TranslateScreen';
 import DictionaryScreen from '../screens/DictionaryScreen';
@@ -11,6 +10,57 @@ import AlphabetScreen from '../screens/AlphabetScreen';
 
 const Tab = createBottomTabNavigator();
 
+// Inline styles for the tab bar matching glassmorphism design
+const inlineStyles = {
+  tabBar: {
+    backgroundColor: 'rgba(26, 26, 46, 0.95)',
+    borderTopWidth: 0,
+    height: 80,
+    paddingTop: 8,
+    paddingBottom: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: -8 },
+    shadowOpacity: 0.2,
+    shadowRadius: 16,
+    elevation: 20,
+    borderTopLeftRadius: 24,
+    borderTopRightRadius: 24,
+    position: 'absolute' as const,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+  tabIconContainer: {
+    alignItems: 'center' as const,
+    justifyContent: 'center' as const,
+    paddingVertical: 4,
+  },
+  tabIcon: {
+    fontSize: 24,
+    marginBottom: 4,
+  },
+  tabIconFocused: {
+    transform: [{ scale: 1.15 }],
+  },
+  tabLabel: {
+    fontSize: 11,
+    color: 'rgba(255, 255, 255, 0.5)',
+    fontWeight: '500' as const,
+  },
+  tabLabelFocused: {
+    color: '#FFC107',
+    fontWeight: '600' as const,
+  },
+  activeIndicator: {
+    position: 'absolute' as const,
+    bottom: -4,
+    width: 4,
+    height: 4,
+    borderRadius: 2,
+    backgroundColor: '#FFC107',
+  },
+};
+
 interface TabIconProps {
   focused: boolean;
   icon: string;
@@ -19,13 +69,20 @@ interface TabIconProps {
 
 function TabIcon({ focused, icon, label }: TabIconProps) {
   return (
-    <View style={styles.tabIconContainer}>
-      <Text style={[styles.tabIcon, focused && styles.tabIconFocused]}>
+    <View style={inlineStyles.tabIconContainer}>
+      <Text style={[
+        inlineStyles.tabIcon,
+        focused && inlineStyles.tabIconFocused
+      ]}>
         {icon}
       </Text>
-      <Text style={[styles.tabLabel, focused && styles.tabLabelFocused]}>
+      <Text style={[
+        inlineStyles.tabLabel,
+        focused && inlineStyles.tabLabelFocused
+      ]}>
         {label}
       </Text>
+      {focused && <View style={inlineStyles.activeIndicator} />}
     </View>
   );
 }
@@ -35,7 +92,7 @@ export default function AppNavigator() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: styles.tabBar,
+        tabBarStyle: inlineStyles.tabBar,
         tabBarShowLabel: false,
       }}
     >
@@ -87,37 +144,3 @@ export default function AppNavigator() {
     </Tab.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  tabBar: {
-    backgroundColor: COLORS.surface,
-    borderTopWidth: 0,
-    height: 70,
-    paddingTop: SPACING.sm,
-    paddingBottom: SPACING.sm,
-    elevation: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: -2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 4,
-  },
-  tabIconContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  tabIcon: {
-    fontSize: 22,
-    marginBottom: 2,
-  },
-  tabIconFocused: {
-    transform: [{ scale: 1.1 }],
-  },
-  tabLabel: {
-    fontSize: FONTS.sizes.xs,
-    color: COLORS.textSecondary,
-  },
-  tabLabelFocused: {
-    color: COLORS.primary,
-    fontWeight: FONTS.weights.semiBold,
-  },
-});
