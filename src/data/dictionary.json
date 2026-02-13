@@ -818,7 +818,21 @@
           "en": "To ask",
           "phonetic": "ssou-ter",
           "usage": "Verbe demander"
-        }
+        },
+        {"id": "vrb_017", "kab_latin": "Kker", "kab_tifinagh": "ⴽⴽⵔ", "fr": "Se lever", "ar": "قام", "en": "To get up", "phonetic": "kker", "usage": "Verbe se lever"},
+        {"id": "vrb_018", "kab_latin": "Qqim", "kab_tifinagh": "ⵇⵇⵉⵎ", "fr": "S'asseoir / Rester", "ar": "جلس / بقي", "en": "To sit / To stay", "phonetic": "qqim", "usage": "Verbe s'asseoir"},
+        {"id": "vrb_019", "kab_latin": "Ffγ", "kab_tifinagh": "ⴼⴼⵖ", "fr": "Sortir", "ar": "خرج", "en": "To go out", "phonetic": "ffegh", "usage": "Verbe sortir"},
+        {"id": "vrb_020", "kab_latin": "Kcem", "kab_tifinagh": "ⴽⵛⵎ", "fr": "Entrer", "ar": "دخل", "en": "To enter", "phonetic": "kchem", "usage": "Verbe entrer"},
+        {"id": "vrb_021", "kab_latin": "Sew", "kab_tifinagh": "ⵙⵡ", "fr": "Boire", "ar": "شرب", "en": "To drink", "phonetic": "sew", "usage": "Variante de boire"},
+        {"id": "vrb_022", "kab_latin": "Ssiwel", "kab_tifinagh": "ⵙⵙⵉⵡⵍ", "fr": "Parler / Appeler", "ar": "تكلم / اتصل", "en": "To speak / To call", "phonetic": "ssi-wel", "usage": "Verbe parler"},
+        {"id": "vrb_023", "kab_latin": "Ẓall", "kab_tifinagh": "ⵥⴰⵍⵍ", "fr": "Prier", "ar": "صلى", "en": "To pray", "phonetic": "zall", "usage": "Verbe prier"},
+        {"id": "vrb_024", "kab_latin": "Sγer", "kab_tifinagh": "ⵙⵖⵔ", "fr": "Acheter", "ar": "اشترى", "en": "To buy", "phonetic": "sgher", "usage": "Verbe acheter"},
+        {"id": "vrb_025", "kab_latin": "Zzenz", "kab_tifinagh": "ⵣⵣⵏⵣ", "fr": "Vendre", "ar": "باع", "en": "To sell", "phonetic": "zzenz", "usage": "Verbe vendre"},
+        {"id": "vrb_026", "kab_latin": "Ṭṭef", "kab_tifinagh": "ⵟⵟⴼ", "fr": "Tenir / Attraper", "ar": "أمسك", "en": "To hold / To catch", "phonetic": "ttef", "usage": "Verbe tenir"},
+        {"id": "vrb_027", "kab_latin": "Efk", "kab_tifinagh": "ⴼⴽ", "fr": "Donner", "ar": "أعطى", "en": "To give", "phonetic": "efk", "usage": "Verbe donner"},
+        {"id": "vrb_028", "kab_latin": "Cnu", "kab_tifinagh": "ⵛⵏⵓ", "fr": "Chanter", "ar": "غنى", "en": "To sing", "phonetic": "cnou", "usage": "Verbe chanter"},
+        {"id": "vrb_029", "kab_latin": "Urar", "kab_tifinagh": "ⵓⵔⴰⵔ", "fr": "Jouer", "ar": "لعب", "en": "To play", "phonetic": "ou-rar", "usage": "Verbe jouer"},
+        {"id": "vrb_030", "kab_latin": "Ssired", "kab_tifinagh": "ⵙⵙⵉⵔⴷ", "fr": "Laver", "ar": "غسل", "en": "To wash", "phonetic": "ssi-red", "usage": "Verbe laver"}
       ]
     },
     {
@@ -1084,7 +1098,15 @@
           "en": "Buttermilk",
           "phonetic": "a-ghi",
           "usage": "Boisson lactée"
-        }
+        },
+        {"id": "fod_013", "kab_latin": "Atay", "kab_tifinagh": "ⴰⵜⴰⵢ", "fr": "Thé", "ar": "شاي", "en": "Tea", "phonetic": "a-tay", "usage": "Boisson"},
+        {"id": "fod_014", "kab_latin": "Lqahwa", "kab_tifinagh": "ⵍⵇⴰⵀⵡⴰ", "fr": "Café", "ar": "قهوة", "en": "Coffee", "phonetic": "l-qa-hwa", "usage": "Boisson"},
+        {"id": "fod_015", "kab_latin": "Tisent", "kab_tifinagh": "ⵜⵉⵙⵏⵜ", "fr": "Sel", "ar": "ملح", "en": "Salt", "phonetic": "ti-sent", "usage": "Condiment"},
+        {"id": "fod_016", "kab_latin": "Lfelfel", "kab_tifinagh": "ⵍⴼⵍⴼⵍ", "fr": "Piment / Poivre", "ar": "فلفل", "en": "Pepper / Chili", "phonetic": "l-fel-fel", "usage": "Épice"},
+        {"id": "fod_017", "kab_latin": "Ssukkar", "kab_tifinagh": "ⵙⵙⵓⴽⴽⴰⵔ", "fr": "Sucre", "ar": "سكر", "en": "Sugar", "phonetic": "ssou-kkar", "usage": "Sucre"},
+        {"id": "fod_018", "kab_latin": "Tacekkalt", "kab_tifinagh": "ⵜⴰⵛⴽⴽⴰⵍⵜ", "fr": "Oignon", "ar": "بصل", "en": "Onion", "phonetic": "ta-chek-kalt", "usage": "Légume"},
+        {"id": "fod_019", "kab_latin": "Tumat", "kab_tifinagh": "ⵜⵓⵎⴰⵜ", "fr": "Tomate", "ar": "طماطم", "en": "Tomato", "phonetic": "tou-mat", "usage": "Légume"},
+        {"id": "fod_020", "kab_latin": "Tabijut", "kab_tifinagh": "ⵜⴰⴱⵉⵊⵓⵜ", "fr": "Pomme de terre", "ar": "بطاطس", "en": "Potato", "phonetic": "ta-bi-jout", "usage": "Légume"}
       ]
     },
     {
@@ -1157,7 +1179,11 @@
           "en": "Orange",
           "phonetic": "a-chen-wi",
           "usage": "Couleur orange"
-        }
+        },
+        {"id": "clr_007", "kab_latin": "Amidadi", "kab_tifinagh": "ⴰⵎⵉⴷⴰⴷⵉ", "fr": "Gris", "ar": "رمادي", "en": "Gray", "phonetic": "a-mi-da-di", "usage": "Couleur grise"},
+        {"id": "clr_008", "kab_latin": "Abuhali", "kab_tifinagh": "ⴰⴱⵓⵀⴰⵍⵉ", "fr": "Marron / Brun", "ar": "بني", "en": "Brown", "phonetic": "a-bou-ha-li", "usage": "Couleur marron"},
+        {"id": "clr_009", "kab_latin": "Azenḍaḍ", "kab_tifinagh": "ⴰⵣⵏⴹⴰⴹ", "fr": "Rose", "ar": "وردي", "en": "Pink", "phonetic": "a-zen-dad", "usage": "Couleur rose"},
+        {"id": "clr_010", "kab_latin": "Anili", "kab_tifinagh": "ⴰⵏⵉⵍⵉ", "fr": "Bleu foncé / Indigo", "ar": "نيلي", "en": "Dark blue / Indigo", "phonetic": "a-ni-li", "usage": "Couleur bleu foncé"}
       ]
     },
     {
@@ -1693,6 +1719,143 @@
           "phonetic": "ta-ya-zit",
           "usage": "Poule"
         }
+      ]
+    }
+    ,
+    {
+      "id": "adjectives",
+      "name": {
+        "kab_latin": "Imyagen n tmentilt",
+        "kab_tifinagh": "ⵉⵎⵢⴰⴳⵏ ⵏ ⵜⵎⵏⵜⵉⵍⵜ",
+        "fr": "Adjectifs",
+        "ar": "صفات",
+        "en": "Adjectives"
+      },
+      "icon": "📝",
+      "entries": [
+        {"id": "adj_001", "kab_latin": "Ameqqran", "kab_tifinagh": "ⴰⵎⵇⵇⵔⴰⵏ", "fr": "Grand", "ar": "كبير", "en": "Big / Large", "phonetic": "a-meq-qran", "usage": "Taille grande"},
+        {"id": "adj_002", "kab_latin": "Amecṭuḥ", "kab_tifinagh": "ⴰⵎⵛⵟⵓⵃ", "fr": "Petit", "ar": "صغير", "en": "Small", "phonetic": "a-mech-touh", "usage": "Taille petite"},
+        {"id": "adj_003", "kab_latin": "Aẓidan", "kab_tifinagh": "ⴰⵥⵉⴷⴰⵏ", "fr": "Beau / Joli", "ar": "جميل", "en": "Beautiful", "phonetic": "a-zi-dan", "usage": "Beauté"},
+        {"id": "adj_004", "kab_latin": "Axatar", "kab_tifinagh": "ⴰⵅⴰⵜⴰⵔ", "fr": "Important / Gros", "ar": "مهم / ضخم", "en": "Important / Big", "phonetic": "a-kha-tar", "usage": "Importance"},
+        {"id": "adj_005", "kab_latin": "Aqdim", "kab_tifinagh": "ⴰⵇⴷⵉⵎ", "fr": "Ancien / Vieux", "ar": "قديم", "en": "Old / Ancient", "phonetic": "aq-dim", "usage": "Ancienneté"},
+        {"id": "adj_006", "kab_latin": "Amaynut", "kab_tifinagh": "ⴰⵎⴰⵢⵏⵓⵜ", "fr": "Nouveau", "ar": "جديد", "en": "New", "phonetic": "a-may-nout", "usage": "Nouveauté"},
+        {"id": "adj_007", "kab_latin": "Iḥerc", "kab_tifinagh": "ⵉⵃⵔⵛ", "fr": "Difficile", "ar": "صعب", "en": "Difficult", "phonetic": "i-herch", "usage": "Difficulté"},
+        {"id": "adj_008", "kab_latin": "Isehel", "kab_tifinagh": "ⵉⵙⵀⵍ", "fr": "Facile", "ar": "سهل", "en": "Easy", "phonetic": "i-se-hel", "usage": "Facilité"},
+        {"id": "adj_009", "kab_latin": "Irgazen", "kab_tifinagh": "ⵉⵔⴳⴰⵣⵏ", "fr": "Fort / Courageux", "ar": "قوي / شجاع", "en": "Strong / Brave", "phonetic": "ir-ga-zen", "usage": "Force"},
+        {"id": "adj_010", "kab_latin": "Aḥlawan", "kab_tifinagh": "ⴰⵃⵍⴰⵡⴰⵏ", "fr": "Doux / Sucré", "ar": "حلو", "en": "Sweet", "phonetic": "ah-la-wan", "usage": "Douceur"},
+        {"id": "adj_011", "kab_latin": "Amur", "kab_tifinagh": "ⴰⵎⵓⵔ", "fr": "Chaud", "ar": "حار", "en": "Hot", "phonetic": "a-mour", "usage": "Température chaude"},
+        {"id": "adj_012", "kab_latin": "Asemmaḍ", "kab_tifinagh": "ⴰⵙⵎⵎⴰⴹ", "fr": "Froid", "ar": "بارد", "en": "Cold", "phonetic": "a-sem-mad", "usage": "Température froide"}
+      ]
+    },
+    {
+      "id": "house",
+      "name": {
+        "kab_latin": "Axxam",
+        "kab_tifinagh": "ⴰⵅⵅⴰⵎ",
+        "fr": "Maison",
+        "ar": "المنزل",
+        "en": "House"
+      },
+      "icon": "🏡",
+      "entries": [
+        {"id": "hse_001", "kab_latin": "Tabburt", "kab_tifinagh": "ⵜⴰⴱⴱⵓⵔⵜ", "fr": "Porte", "ar": "باب", "en": "Door", "phonetic": "tab-bourt", "usage": "Porte"},
+        {"id": "hse_002", "kab_latin": "Ṭṭaq", "kab_tifinagh": "ⵟⵟⴰⵇ", "fr": "Fenêtre", "ar": "نافذة", "en": "Window", "phonetic": "ttaq", "usage": "Fenêtre"},
+        {"id": "hse_003", "kab_latin": "Ṣṣur", "kab_tifinagh": "ⵚⵚⵓⵔ", "fr": "Mur", "ar": "جدار", "en": "Wall", "phonetic": "ssour", "usage": "Mur"},
+        {"id": "hse_004", "kab_latin": "Sseqf", "kab_tifinagh": "ⵙⵙⵇⴼ", "fr": "Toit", "ar": "سقف", "en": "Roof", "phonetic": "sseqf", "usage": "Toit"},
+        {"id": "hse_005", "kab_latin": "Taqaâet", "kab_tifinagh": "ⵜⴰⵇⴰⵄⵜ", "fr": "Chambre / Pièce", "ar": "غرفة", "en": "Room", "phonetic": "ta-qa-ât", "usage": "Pièce"},
+        {"id": "hse_006", "kab_latin": "Takuzint", "kab_tifinagh": "ⵜⴰⴽⵓⵣⵉⵏⵜ", "fr": "Cuisine", "ar": "مطبخ", "en": "Kitchen", "phonetic": "ta-kou-zint", "usage": "Cuisine"},
+        {"id": "hse_007", "kab_latin": "Assu", "kab_tifinagh": "ⴰⵙⵙⵓ", "fr": "Lit", "ar": "سرير", "en": "Bed", "phonetic": "as-sou", "usage": "Lit"},
+        {"id": "hse_008", "kab_latin": "Tafawt", "kab_tifinagh": "ⵜⴰⴼⴰⵡⵜ", "fr": "Lumière", "ar": "ضوء", "en": "Light", "phonetic": "ta-fawt", "usage": "Lumière"},
+        {"id": "hse_009", "kab_latin": "Lkanun", "kab_tifinagh": "ⵍⴽⴰⵏⵓⵏ", "fr": "Foyer / Kanoun", "ar": "كانون", "en": "Hearth", "phonetic": "l-ka-noun", "usage": "Foyer traditionnel"},
+        {"id": "hse_010", "kab_latin": "Asaru", "kab_tifinagh": "ⴰⵙⴰⵔⵓ", "fr": "Escalier", "ar": "درج", "en": "Stairs", "phonetic": "a-sa-rou", "usage": "Escalier"}
+      ]
+    },
+    {
+      "id": "clothes",
+      "name": {
+        "kab_latin": "Iselsa",
+        "kab_tifinagh": "ⵉⵙⵍⵙⴰ",
+        "fr": "Vêtements",
+        "ar": "ملابس",
+        "en": "Clothes"
+      },
+      "icon": "👕",
+      "entries": [
+        {"id": "clt_001", "kab_latin": "Aqendur", "kab_tifinagh": "ⴰⵇⵏⴷⵓⵔ", "fr": "Robe kabyle", "ar": "فستان قبائلي", "en": "Kabyle dress", "phonetic": "a-qen-dour", "usage": "Robe traditionnelle kabyle"},
+        {"id": "clt_002", "kab_latin": "Abernous", "kab_tifinagh": "ⴰⴱⵔⵏⵓⵙ", "fr": "Burnous", "ar": "برنوس", "en": "Burnous (cloak)", "phonetic": "a-ber-nous", "usage": "Cape traditionnelle"},
+        {"id": "clt_003", "kab_latin": "Aselsa", "kab_tifinagh": "ⴰⵙⵍⵙⴰ", "fr": "Vêtement", "ar": "لباس", "en": "Clothing", "phonetic": "a-sel-sa", "usage": "Vêtement en général"},
+        {"id": "clt_004", "kab_latin": "Taqendurt", "kab_tifinagh": "ⵜⴰⵇⵏⴷⵓⵔⵜ", "fr": "Petite robe", "ar": "فستان صغير", "en": "Small dress", "phonetic": "ta-qen-dourt", "usage": "Diminutif de robe"},
+        {"id": "clt_005", "kab_latin": "Tabatit", "kab_tifinagh": "ⵜⴰⴱⴰⵜⵉⵜ", "fr": "Casquette / Chapeau", "ar": "قبعة", "en": "Cap / Hat", "phonetic": "ta-ba-tit", "usage": "Couvre-chef"},
+        {"id": "clt_006", "kab_latin": "Ikerciwen", "kab_tifinagh": "ⵉⴽⵔⵛⵉⵡⵏ", "fr": "Chaussures", "ar": "أحذية", "en": "Shoes", "phonetic": "i-ker-chi-wen", "usage": "Chaussures"},
+        {"id": "clt_007", "kab_latin": "Taɛbant", "kab_tifinagh": "ⵜⴰⵄⴱⴰⵏⵜ", "fr": "Couverture / Châle", "ar": "غطاء / شال", "en": "Blanket / Shawl", "phonetic": "ta-âbant", "usage": "Couverture"},
+        {"id": "clt_008", "kab_latin": "Agus", "kab_tifinagh": "ⴰⴳⵓⵙ", "fr": "Ceinture", "ar": "حزام", "en": "Belt", "phonetic": "a-gous", "usage": "Ceinture"}
+      ]
+    },
+    {
+      "id": "weather",
+      "name": {
+        "kab_latin": "Lḥal n yigenni",
+        "kab_tifinagh": "ⵍⵃⴰⵍ ⵏ ⵢⵉⴳⵏⵏⵉ",
+        "fr": "Météo",
+        "ar": "الطقس",
+        "en": "Weather"
+      },
+      "icon": "🌤️",
+      "entries": [
+        {"id": "wth_001", "kab_latin": "Abeḥri", "kab_tifinagh": "ⴰⴱⵃⵔⵉ", "fr": "Brise / Air frais", "ar": "نسيم", "en": "Breeze", "phonetic": "a-beh-ri", "usage": "Vent léger"},
+        {"id": "wth_002", "kab_latin": "Lehwa", "kab_tifinagh": "ⵍⵀⵡⴰ", "fr": "Chaleur", "ar": "حرارة", "en": "Heat", "phonetic": "leh-wa", "usage": "Temps chaud"},
+        {"id": "wth_003", "kab_latin": "Asemmaḍ", "kab_tifinagh": "ⴰⵙⵎⵎⴰⴹ", "fr": "Froid", "ar": "برد", "en": "Cold", "phonetic": "a-sem-mad", "usage": "Temps froid"},
+        {"id": "wth_004", "kab_latin": "Tagrest", "kab_tifinagh": "ⵜⴰⴳⵔⵙⵜ", "fr": "Hiver", "ar": "شتاء", "en": "Winter", "phonetic": "ta-grest", "usage": "Saison froide"},
+        {"id": "wth_005", "kab_latin": "Tafsut", "kab_tifinagh": "ⵜⴰⴼⵙⵓⵜ", "fr": "Printemps", "ar": "ربيع", "en": "Spring", "phonetic": "ta-fsout", "usage": "Saison des fleurs"},
+        {"id": "wth_006", "kab_latin": "Anebdu", "kab_tifinagh": "ⴰⵏⴱⴷⵓ", "fr": "Été", "ar": "صيف", "en": "Summer", "phonetic": "a-neb-dou", "usage": "Saison chaude"},
+        {"id": "wth_007", "kab_latin": "Amwan", "kab_tifinagh": "ⴰⵎⵡⴰⵏ", "fr": "Automne", "ar": "خريف", "en": "Autumn", "phonetic": "am-wan", "usage": "Saison des récoltes"},
+        {"id": "wth_008", "kab_latin": "Lbeṛd", "kab_tifinagh": "ⵍⴱⵕⴷ", "fr": "Grêle", "ar": "برد", "en": "Hail", "phonetic": "l-berd", "usage": "Grêle"},
+        {"id": "wth_009", "kab_latin": "Abruri", "kab_tifinagh": "ⴰⴱⵔⵓⵔⵉ", "fr": "Brouillard", "ar": "ضباب", "en": "Fog", "phonetic": "ab-rou-ri", "usage": "Brouillard"},
+        {"id": "wth_010", "kab_latin": "Tafukt teqqar", "kab_tifinagh": "ⵜⴰⴼⵓⴽⵜ ⵜⵇⵇⴰⵔ", "fr": "Il fait beau / Soleil", "ar": "الجو جميل", "en": "It's sunny", "phonetic": "ta-foukt teq-qar", "usage": "Beau temps"}
+      ]
+    },
+    {
+      "id": "emotions",
+      "name": {
+        "kab_latin": "Iḥulfan",
+        "kab_tifinagh": "ⵉⵃⵓⵍⴼⴰⵏ",
+        "fr": "Émotions",
+        "ar": "مشاعر",
+        "en": "Emotions"
+      },
+      "icon": "❤️",
+      "entries": [
+        {"id": "emo_001", "kab_latin": "Lferḥ", "kab_tifinagh": "ⵍⴼⵔⵃ", "fr": "Joie / Bonheur", "ar": "فرح", "en": "Joy / Happiness", "phonetic": "l-ferh", "usage": "Joie"},
+        {"id": "emo_002", "kab_latin": "Tagmat", "kab_tifinagh": "ⵜⴰⴳⵎⴰⵜ", "fr": "Fraternité / Amour fraternel", "ar": "أخوة", "en": "Brotherhood", "phonetic": "tag-mat", "usage": "Fraternité"},
+        {"id": "emo_003", "kab_latin": "Aḥzen", "kab_tifinagh": "ⴰⵃⵣⵏ", "fr": "Tristesse", "ar": "حزن", "en": "Sadness", "phonetic": "ah-zen", "usage": "Tristesse"},
+        {"id": "emo_004", "kab_latin": "Tugdi", "kab_tifinagh": "ⵜⵓⴳⴷⵉ", "fr": "Peur", "ar": "خوف", "en": "Fear", "phonetic": "toug-di", "usage": "Peur"},
+        {"id": "emo_005", "kab_latin": "Tuggdi", "kab_tifinagh": "ⵜⵓⴳⴳⴷⵉ", "fr": "Colère", "ar": "غضب", "en": "Anger", "phonetic": "toug-gdi", "usage": "Colère"},
+        {"id": "emo_006", "kab_latin": "Tayri", "kab_tifinagh": "ⵜⴰⵢⵔⵉ", "fr": "Amour", "ar": "حب", "en": "Love", "phonetic": "tay-ri", "usage": "Amour"},
+        {"id": "emo_007", "kab_latin": "Ssber", "kab_tifinagh": "ⵙⵙⴱⵔ", "fr": "Patience", "ar": "صبر", "en": "Patience", "phonetic": "ss-ber", "usage": "Patience"},
+        {"id": "emo_008", "kab_latin": "Lεeqel", "kab_tifinagh": "ⵍⵄⵇⵍ", "fr": "Sagesse / Raison", "ar": "عقل / حكمة", "en": "Wisdom", "phonetic": "l-âe-qel", "usage": "Sagesse"},
+        {"id": "emo_009", "kab_latin": "Lḥasad", "kab_tifinagh": "ⵍⵃⴰⵙⴷ", "fr": "Jalousie / Envie", "ar": "حسد", "en": "Jealousy / Envy", "phonetic": "l-ha-sad", "usage": "Jalousie"},
+        {"id": "emo_010", "kab_latin": "Ccuq", "kab_tifinagh": "ⵛⵛⵓⵇ", "fr": "Nostalgie / Manque", "ar": "شوق", "en": "Nostalgia / Longing", "phonetic": "cchouq", "usage": "Nostalgie"}
+      ]
+    },
+    {
+      "id": "professions",
+      "name": {
+        "kab_latin": "Ixeddamen",
+        "kab_tifinagh": "ⵉⵅⴷⴷⴰⵎⵏ",
+        "fr": "Métiers",
+        "ar": "مهن",
+        "en": "Professions"
+      },
+      "icon": "👷",
+      "entries": [
+        {"id": "pro_001", "kab_latin": "Amusnaw", "kab_tifinagh": "ⴰⵎⵓⵙⵏⴰⵡ", "fr": "Sage / Savant", "ar": "حكيم / عالم", "en": "Wise man / Scholar", "phonetic": "a-mous-naw", "usage": "Sage ou savant"},
+        {"id": "pro_002", "kab_latin": "Aselmad", "kab_tifinagh": "ⴰⵙⵍⵎⴰⴷ", "fr": "Enseignant", "ar": "معلم", "en": "Teacher", "phonetic": "a-sel-mad", "usage": "Enseignant"},
+        {"id": "pro_003", "kab_latin": "Aḍbib", "kab_tifinagh": "ⴰⴹⴱⵉⴱ", "fr": "Médecin", "ar": "طبيب", "en": "Doctor", "phonetic": "ad-bib", "usage": "Médecin"},
+        {"id": "pro_004", "kab_latin": "Afellaḥ", "kab_tifinagh": "ⴰⴼⵍⵍⴰⵃ", "fr": "Agriculteur / Paysan", "ar": "فلاح", "en": "Farmer", "phonetic": "a-fel-lah", "usage": "Paysan"},
+        {"id": "pro_005", "kab_latin": "Amzwaru", "kab_tifinagh": "ⴰⵎⵣⵡⴰⵔⵓ", "fr": "Chef / Premier", "ar": "رئيس / أول", "en": "Chief / Leader", "phonetic": "a-mez-wa-rou", "usage": "Chef ou leader"},
+        {"id": "pro_006", "kab_latin": "Aḥeddad", "kab_tifinagh": "ⴰⵃⴷⴷⴰⴷ", "fr": "Forgeron", "ar": "حداد", "en": "Blacksmith", "phonetic": "a-hed-dad", "usage": "Forgeron"},
+        {"id": "pro_007", "kab_latin": "Amenjar", "kab_tifinagh": "ⴰⵎⵏⵊⴰⵔ", "fr": "Menuisier", "ar": "نجار", "en": "Carpenter", "phonetic": "a-men-jar", "usage": "Menuisier"},
+        {"id": "pro_008", "kab_latin": "Aẓawali", "kab_tifinagh": "ⴰⵥⴰⵡⴰⵍⵉ", "fr": "Pauvre / Travailleur", "ar": "فقير / عامل", "en": "Poor / Worker", "phonetic": "a-za-wa-li", "usage": "Personne modeste"}
       ]
     }
   ],
